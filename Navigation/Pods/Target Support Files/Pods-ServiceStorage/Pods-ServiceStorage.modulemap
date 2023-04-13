@@ -1,0 +1,6 @@
+framework module Pods_ServiceStorage {
+  umbrella header "Pods-ServiceStorage-umbrella.h"
+
+  export *
+  module * { export * }
+}
