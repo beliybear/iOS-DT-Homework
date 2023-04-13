@@ -64,23 +64,16 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         title = "Feed"
         view.backgroundColor = .white
-        addTargets()
         setupConstraints()
+        addTargets()
         checkWord()
     }
 
-    private func addTargets() {
-
+    private func addTargets(){
+        buttonFirst.addTarget(self, action: #selector(pushToInfo), for: .touchUpInside)
+        buttonSecond.addTarget(self, action: #selector(pushToPost), for: .touchUpInside)
     }
     
-    func infoButtonPressed() {
-        delegate?.infoButtonPressed()
-    }
-    
-    func postButtonPressed() {
-        delegate?.postButtonPressed()
-    }
-
     private func setupConstraints() {
         view.addSubview(stackView)
         view.addSubview(textField)
@@ -113,13 +106,6 @@ class FeedViewController: UIViewController {
                 ])
             }
 
-
-    @objc func toPostView() {
-        let postController = PostViewController()
-        self.navigationController?.pushViewController(postController, animated: true)
-        postController.titlePost = "New Post"
-    }
-
     private func checkWord() {
             checkGuessButton.target = { [self] in
                 if textField.hasText {
@@ -136,5 +122,15 @@ class FeedViewController: UIViewController {
                 }
             }
         }
+    
+    @objc private func pushToInfo(){
+        navigationController?.pushViewController(InfoViewController(), animated: true)
+    }
+    
+    @objc private func pushToPost(){
+        navigationController?.pushViewController(PostViewController(), animated: true)
+    }
 }
+
+
 
