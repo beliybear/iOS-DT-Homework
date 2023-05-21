@@ -54,7 +54,7 @@ struct NetworkManager {
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data,
                       let dictionary = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-                      let text = dictionary["url"] as? String
+                      let _ = dictionary["url"] as? String
                 else {
                     return
                 }

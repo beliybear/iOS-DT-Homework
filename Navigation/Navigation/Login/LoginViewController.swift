@@ -10,6 +10,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     let coordinator: ProfileCoordinator
+    var logInDelegate: LoginDelegateProtocol?
     
     init(coordinator: ProfileCoordinator) {
         self.coordinator = coordinator
@@ -54,6 +55,7 @@ class LoginViewController: UIViewController {
         login.backgroundColor = .systemGray6
         login.textAlignment = .left
         login.placeholder = "  Email or phone"
+        login.text = "beliybear@mail.ru"
         login.tintColor =  UIColor (named: "MyColor")
         login.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         login.autocapitalizationType = .none
@@ -70,6 +72,7 @@ class LoginViewController: UIViewController {
         password.backgroundColor = .systemGray6
         password.textAlignment = .left
         password.placeholder = "  Password"
+        password.text = "123456"
         password.tintColor = UIColor (named: "MyColor")
         password.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         password.autocapitalizationType = .none
@@ -81,7 +84,18 @@ class LoginViewController: UIViewController {
         return password
     }()
     
-    private lazy var button: UIButton = {
+    private lazy var signUpButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Sign Up", for: .normal)
+        button.layer.cornerRadius = 10
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.backgroundColor = UIColor(patternImage: UIImage (named: "blue_pixel")!)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(touchSignUpButton), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var logInButton: UIButton = {
         let loginButton = UIButton()
         loginButton.layer.cornerRadius = 10
         loginButton.setTitle("Log In", for: .normal)
@@ -93,16 +107,14 @@ class LoginViewController: UIViewController {
     }()
     
     private lazy var pickUpButton = CustomButton(title: "Подобрать пароль", cornerRadius: 10, titleColor: .white, color: .black)
-
-     private lazy var activityIndicator: UIActivityIndicatorView = {
-         let indicator = UIActivityIndicatorView()
-         indicator.translatesAutoresizingMaskIntoConstraints = false
-         return indicator
-     }()
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
     
     private let alert = UIAlertController(title: "Неверный логин или пароль", message: "",  preferredStyle: .alert)
-    var loginDelegate: LoginViewControllerDelegate?
-    private var userService: UserService?
     var passwordForLogin: String = ""
     
     override func viewDidLoad() {
@@ -113,34 +125,29 @@ class LoginViewController: UIViewController {
         addSubview()
         setupConstraints()
         setupAlert()
-#if DEBUG
-        userService = TestUserService(user: User(login: "0001", name: "User Name", avatar: UIImage(named: "a") ?? .add, status: "testing account"))
-#else
-        userService = CurrentUserService(user: User(login: "0000", name: "BeliyBear", avatar: UIImage(named: "avatarImage") ?? .add, status: "waiting for something"))
-#endif
         pickUpButton.addTarget(self, action: #selector(touchPickUpButton), for: .touchUpInside)
     }
     
     @objc private func touchPickUpButton() {
         
         let queue = DispatchQueue.global(qos: .userInteractive)
-                    let group = DispatchGroup()
-
-                    group.enter()
-                    self.activityIndicator.startAnimating()
-                    queue.async {
-                        self.bruteForce(passwordToUnlock: self.randomPassword(length: 4))
-                        group.leave()
-                    }
-                    group.notify(queue: .main){ [self] in
-                        self.password.isSecureTextEntry = false
-                        self.password.text = self.passwordForLogin
-                        self.activityIndicator.stopAnimating()
-
-                    }
+        let group = DispatchGroup()
+        
+        group.enter()
+        self.activityIndicator.startAnimating()
+        queue.async {
+            self.bruteForce(passwordToUnlock: self.randomPassword(length: 4))
+            group.leave()
+        }
+        group.notify(queue: .main){ [self] in
+            self.password.isSecureTextEntry = false
+            self.password.text = self.passwordForLogin
+            self.activityIndicator.stopAnimating()
+            
+        }
         
     }
-        
+    
     
     private func setupGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.forcedHidingKeyboard))
@@ -166,7 +173,8 @@ class LoginViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(logoImage)
         scrollView.addSubview(stackView)
-        scrollView.addSubview(button)
+        scrollView.addSubview(logInButton)
+        scrollView.addSubview(signUpButton)
         scrollView.addSubview(pickUpButton)
     }
     
@@ -189,12 +197,17 @@ class LoginViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-            button.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16),
-            button.heightAnchor.constraint(equalToConstant: 50),
-            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            logInButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16),
+            logInButton.heightAnchor.constraint(equalToConstant: 50),
+            logInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            logInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-            pickUpButton.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 3),
+            signUpButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 3),
+            signUpButton.heightAnchor.constraint(equalToConstant: 50),
+            signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
+            pickUpButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 16),
             pickUpButton.heightAnchor.constraint(equalToConstant: 50),
             pickUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             pickUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
@@ -213,7 +226,7 @@ class LoginViewController: UIViewController {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
             
-            let loginButtonBottomPointY =  button.frame.origin.y + button.frame.height
+            let loginButtonBottomPointY = logInButton.frame.origin.y + logInButton.frame.height
             let keyboardOriginY = view.frame.height - keyboardHeight
             
             let yOffset = keyboardOriginY < loginButtonBottomPointY
@@ -233,19 +246,15 @@ class LoginViewController: UIViewController {
     }
     
     @objc func touchLoginButton() {
-        guard let login = self.login.text, let password = self.password.text else { return }
-        if let delegate = self.loginDelegate, delegate.check(login, password) {
-            if let user = userService?.authorization(login) {
-                print("User found: \(user.name)") // Debug print
-                self.coordinator.startView(user: user)
-            } else {
-                showAlert()
-            }
-        } else {
-            showAlert()
-        }
+        goLogin()
     }
-
+    
+    @objc func touchSignUpButton() {
+        let VC = SignupViewController()
+        VC.signUpDelegate = MyLoginFactory().makeCheckerService()
+        navigationController?.pushViewController(VC, animated: true)
+    }
+    
     func showAlert() {
         let alert = UIAlertController(title: "Unknown login or password", message: "Please, enter correct user login and password", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
@@ -254,19 +263,19 @@ class LoginViewController: UIViewController {
 }
 
 extension String {
-var digits:      String { return "0123456789" }
-var lowercase:   String { return "abcdefghijklmnopqrstuvwxyz" }
-var uppercase:   String { return "ABCDEFGHIJKLMNOPQRSTUVWXYZ" }
-var letters:     String { return lowercase + uppercase }
-var printable:   String { return digits + letters }
-
-
-
-mutating func replace(at index: Int, with character: Character) {
-    var stringArray = Array(self)
-    stringArray[index] = character
-    self = String(stringArray)
-}
+    var digits:      String { return "0123456789" }
+    var lowercase:   String { return "abcdefghijklmnopqrstuvwxyz" }
+    var uppercase:   String { return "ABCDEFGHIJKLMNOPQRSTUVWXYZ" }
+    var letters:     String { return lowercase + uppercase }
+    var printable:   String { return digits + letters }
+    
+    
+    
+    mutating func replace(at index: Int, with character: Character) {
+        var stringArray = Array(self)
+        stringArray[index] = character
+        self = String(stringArray)
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {
@@ -277,49 +286,103 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     func bruteForce(passwordToUnlock: String) {
-            
-            let ALLOWED_CHARACTERS:   [String] = String().printable.map { String($0) }
-
-            
-
-            // Will strangely ends at 0000 instead of ~~~
-            while passwordForLogin != passwordToUnlock { // Increase MAXIMUM_PASSWORD_SIZE value for more
-                passwordForLogin = generateBruteForce(passwordForLogin, fromArray: ALLOWED_CHARACTERS)
-            }
-            print(passwordForLogin)
+        
+        let ALLOWED_CHARACTERS:   [String] = String().printable.map { String($0) }
+        
+        
+        
+        // Will strangely ends at 0000 instead of ~~~
+        while passwordForLogin != passwordToUnlock { // Increase MAXIMUM_PASSWORD_SIZE value for more
+            passwordForLogin = generateBruteForce(passwordForLogin, fromArray: ALLOWED_CHARACTERS)
         }
-
-        func indexOf(character: Character, _ array: [String]) -> Int {
+        print(passwordForLogin)
+    }
+    
+    func indexOf(character: Character, _ array: [String]) -> Int {
         return array.firstIndex(of: String(character))!
-        }
-
-        func characterAt(index: Int, _ array: [String]) -> Character {
+    }
+    
+    func characterAt(index: Int, _ array: [String]) -> Character {
         return index < array.count ? Character(array[index])
-                                   : Character("")
-        }
-
-        func generateBruteForce(_ string: String, fromArray array: [String]) -> String {
+        : Character("")
+    }
+    
+    func generateBruteForce(_ string: String, fromArray array: [String]) -> String {
         var str: String = string
-
+        
         if str.count <= 0 {
             str.append(characterAt(index: 0, array))
         }
         else {
             str.replace(at: str.count - 1,
                         with: characterAt(index: (indexOf(character: str.last!, array) + 1) % array.count, array))
-
+            
             if indexOf(character: str.last!, array) == 0 {
                 str = String(generateBruteForce(String(str.dropLast()), fromArray: array)) + String(str.last!)
             }
         }
-
-        return str
-        }
         
-        func randomPassword(length: Int) -> String {
-            let letters = String().printable
-            return String((0..<length).map{ _ in letters.randomElement()! })
-        }
-
+        return str
+    }
+    
+    func randomPassword(length: Int) -> String {
+        let letters = String().printable
+        return String((0..<length).map{ _ in letters.randomElement()! })
+    }
+    
+    func goLogin() {
+        let email = login.text
+        let password = password.text
+        logInDelegate?.logIn(logIn: email, password: password, completion: { data, error  in
+            if error != nil {
+                switch error {
+                case .emptyPasswordOrEmail:
+                    let alert = UIAlertController(title: "Ошибка", message: Authorization.emptyPasswordOrEmail.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alert, animated: true)
+                case .invalidPassword:
+                    let alert = UIAlertController(title: "Ошибка", message: Authorization.invalidPassword.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alert, animated: true)
+                case .weakPassword:
+                    let alert = UIAlertController(title: "Ошибка", message: Authorization.weakPassword.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alert, animated: true)
+                case .mismatchPassword:
+                    let alert = UIAlertController(title: "Ошибка", message: Authorization.mismatchPassword.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alert, animated: true)
+                case .notFound:
+                    let alert = UIAlertController(title: "Ошибка", message: Authorization.notFound.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alert, animated: true)
+                case .emailAlreadyInUse:
+                    let alert = UIAlertController(title: "Ошибка", message: Authorization.emailAlreadyInUse.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alert, animated: true)
+                case .invalidEmail:
+                    let alert = UIAlertController(title: "Ошибка", message: Authorization.invalidEmail.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alert, animated: true)
+                case .unexpected:
+                    let alert = UIAlertController(title: "Ошибка", message: Authorization.unexpected.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alert, animated: true)
+                default:
+                    return
+                }
+            } else {
+                switch data {
+                case .logIn:
+                    self.coordinator.startView(user: User(login: "beliybear@mail.ru", name: "BeliyBear", avatar: UIImage(named: "avatarImage")!, status: "Something..."))
+                case .signUp:
+                    self.navigationController?.popToRootViewController(animated: true)
+                default:
+                    return
+                }
+            }
+        })
+    }
+    
     
 }
