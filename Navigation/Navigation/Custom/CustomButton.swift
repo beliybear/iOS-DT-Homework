@@ -37,16 +37,6 @@ class CustomButton: UIButton {
         setTitle(title, for: .normal)
         setTitleColor(titleColor, for: .normal)
         backgroundColor = color
-        addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-    }
-
-    @objc private func buttonTapped() {
-
-        if let action = target {
-            action()
-        } else {
-            print ("No target")
-        }
     }
 
 }

@@ -40,7 +40,7 @@ class FeedModel {
     
     private weak var delegate: FeedViewDelegate?
     
-    var secretWord = "password"
+    var secretWord = "Password"
     
     func check(_ word: String) -> Bool {
         return word == secretWord

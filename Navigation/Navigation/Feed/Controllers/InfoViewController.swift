@@ -8,7 +8,19 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.layer.cornerRadius = 12
+        stackView.backgroundColor = .white
+        stackView.layer.borderColor = UIColor.systemGray.cgColor
+        stackView.layer.borderWidth = 5
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -18,8 +30,32 @@ class InfoViewController: UIViewController {
                                          action: #selector(showSimpleAlert))
         self.navigationItem.rightBarButtonItem = infoButton
         
-        setupButton()
+        networkManagerAct()
+        addSubview()
+        setupConstraints()
     }
+    
+    private lazy var networkManager = NetworkManager()
+    
+    // Задание 2.1 (IOS_DT)
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    // Задание 2.2 (IOS_DT)
+    
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     private lazy var button: UIButton = {
             let button = UIButton()
@@ -33,13 +69,41 @@ class InfoViewController: UIViewController {
             return button
         }()
     
-    private func setupButton() {
-            self.view.addSubview(self.button)
-            self.button.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 300).isActive = true
-            self.button.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
-            self.button.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
-            self.button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    private func addSubview(){
+        view.addSubview(stackView)
+        view.addSubview(button)
+        stackView.addSubview(titleLabel)
+        stackView.addSubview(descriptionLabel)
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+             button.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+             button.heightAnchor.constraint(equalToConstant: 50),
+             button.widthAnchor.constraint(equalToConstant: 200),
+            
+            stackView.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 16),
+             stackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+             stackView.widthAnchor.constraint(equalToConstant: 300),
+             stackView.heightAnchor.constraint(equalToConstant: 100),
+            
+            titleLabel.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 10),
+             titleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+             descriptionLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+        ])
+    }
+    
+    private func networkManagerAct() {
+        networkManager.titleRequest { [weak self] title in
+            self?.titleLabel.text = title
         }
+        networkManager.orbitRequest { [weak self] title in
+            self?.descriptionLabel.text = title
+        }
+    }
     
     @objc func showSimpleAlert() {
             let alert = UIAlertController(title: "Sharing",
