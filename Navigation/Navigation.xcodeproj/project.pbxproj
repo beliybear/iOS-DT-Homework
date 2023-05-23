@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30C6B5E77E4D21D6C1E743D9 /* Pods_ServiceStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FEFE0D888C53FEB17B1203 /* Pods_ServiceStorage.framework */; };
 		3A114129294C506500CD28C6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A114128294C506500CD28C6 /* InfoViewController.swift */; };
 		3A41637A29624CAF001AEB66 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41637929624CAF001AEB66 /* PostTableViewCell.swift */; };
 		3A6B2B0129C8742700B0BB44 /* PhotoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B2B0029C8742700B0BB44 /* PhotoData.swift */; };
@@ -24,17 +25,14 @@
 		3A990C36294B15B8001D0ECC /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A990C35294B15B8001D0ECC /* PostViewController.swift */; };
 		3AA0D18429E392A7003005FA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0D18329E392A7003005FA /* NetworkManager.swift */; };
 		3AADE160295E9BAD009F9581 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADE15F295E9BAD009F9581 /* LoginViewController.swift */; };
-		3AB2E89729BD02DB0001665C /* LoginViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2E89629BD02DB0001665C /* LoginViewControllerDelegate.swift */; };
-		3AB2E89A29BD031E0001665C /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2E89929BD031E0001665C /* Checker.swift */; };
-		3AB2E89C29BD03320001665C /* CurrentUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2E89B29BD03320001665C /* CurrentUserService.swift */; };
-		3AB2E89E29BD03460001665C /* TestUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2E89D29BD03460001665C /* TestUserService.swift */; };
 		3AB2E8A029BD03560001665C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2E89F29BD03560001665C /* User.swift */; };
 		3AB6E24C2951B6AD00B07728 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E24A2951B6AD00B07728 /* ProfileHeaderView.swift */; };
 		3AB6E24D2951B6AD00B07728 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E24B2951B6AD00B07728 /* ProfileViewController.swift */; };
 		3AC1C3AD29BE33FE003E3CD7 /* ServiceStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AC1C3AC29BE33FE003E3CD7 /* ServiceStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AC1C3B029BE33FE003E3CD7 /* ServiceStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC1C3AA29BE33FD003E3CD7 /* ServiceStorage.framework */; };
-		3AC1C3B129BE33FE003E3CD7 /* ServiceStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC1C3AA29BE33FD003E3CD7 /* ServiceStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3AC1C41729BE3633003E3CD7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1C41629BE3633003E3CD7 /* Post.swift */; };
+		3AC39A462A1A86000053AF30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC39A452A1A86000053AF30 /* GoogleService-Info.plist */; };
+		3AC39A4E2A1A8B470053AF30 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC39A4D2A1A8B470053AF30 /* SignUpViewController.swift */; };
+		3AC39A6E2A1A8D5D0053AF30 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC39A6D2A1A8D5D0053AF30 /* Errors.swift */; };
 		3AE9E6ED29BD098900D13B93 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9E6EC29BD098900D13B93 /* CustomButton.swift */; };
 		3AE9E6EF29BD09AB00D13B93 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9E6EE29BD09AB00D13B93 /* FeedModel.swift */; };
 		3AE9E6F429BD0E3E00D13B93 /* iOSIntPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE9E6F329BD0E3E00D13B93 /* iOSIntPackage */; };
@@ -45,6 +43,7 @@
 		3AE9E70029BD1ADC00D13B93 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9E6FF29BD1ADB00D13B93 /* ProfileCoordinator.swift */; };
 		3AE9E70229BD1AF600D13B93 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9E70129BD1AF600D13B93 /* FeedCoordinator.swift */; };
 		3AE9E70929BD1DC800D13B93 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9E70829BD1DC800D13B93 /* ProfileViewModel.swift */; };
+		68250B582D607D34105122F0 /* Pods_Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248CF500B1432010DF22671E /* Pods_Navigation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +75,62 @@
 			remoteGlobalIDString = 979486118B3E90C08386079D57962701;
 			remoteInfo = SnapKit;
 		};
+		3AC39A5D2A1A8B470053AF30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AC1C40A29BE3549003E3CD7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43B1E4CD7B30B9FD278100133C2AC788;
+			remoteInfo = FirebaseAuth;
+		};
+		3AC39A5F2A1A8B470053AF30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AC1C40A29BE3549003E3CD7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2B63D462DB7F827C4B11FD51E4F8E2D;
+			remoteInfo = FirebaseCore;
+		};
+		3AC39A612A1A8B470053AF30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AC1C40A29BE3549003E3CD7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 148D0F9E8C7373FEAF40D800FC5F1BAA;
+			remoteInfo = FirebaseCoreInternal;
+		};
+		3AC39A632A1A8B470053AF30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AC1C40A29BE3549003E3CD7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 13C8C8B254851998F9289F71229B28A2;
+			remoteInfo = FirebaseInstallations;
+		};
+		3AC39A652A1A8B470053AF30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AC1C40A29BE3549003E3CD7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B43874C6CBB50E7134FBEC24BABFE14F;
+			remoteInfo = GoogleUtilities;
+		};
+		3AC39A672A1A8B470053AF30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AC1C40A29BE3549003E3CD7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C1998E0D8085221AD87F89B614C10E52;
+			remoteInfo = GTMSessionFetcher;
+		};
+		3AC39A692A1A8B470053AF30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AC1C40A29BE3549003E3CD7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06FC5C9CF96D60C50FCD47D339C91951;
+			remoteInfo = nanopb;
+		};
+		3AC39A6B2A1A8B470053AF30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AC1C40A29BE3549003E3CD7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3347A1AB6546F0A3977529B8F199DC41;
+			remoteInfo = PromisesObjC;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -85,7 +140,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3AC1C3B129BE33FE003E3CD7 /* ServiceStorage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +147,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11FEFE0D888C53FEB17B1203 /* Pods_ServiceStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		248CF500B1432010DF22671E /* Pods_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A114128294C506500CD28C6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		3A41637929624CAF001AEB66 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		3A6B2B0029C8742700B0BB44 /* PhotoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoData.swift; sourceTree = "<group>"; };
@@ -111,14 +167,9 @@
 		3A990C35294B15B8001D0ECC /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		3AA0D18329E392A7003005FA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3AADE15F295E9BAD009F9581 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3AB2E89629BD02DB0001665C /* LoginViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerDelegate.swift; sourceTree = "<group>"; };
-		3AB2E89929BD031E0001665C /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
-		3AB2E89B29BD03320001665C /* CurrentUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserService.swift; sourceTree = "<group>"; };
-		3AB2E89D29BD03460001665C /* TestUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserService.swift; sourceTree = "<group>"; };
 		3AB2E89F29BD03560001665C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3AB6E24A2951B6AD00B07728 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		3AB6E24B2951B6AD00B07728 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		3AC1C3AA29BE33FD003E3CD7 /* ServiceStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ServiceStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC1C3AC29BE33FE003E3CD7 /* ServiceStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceStorage.h; sourceTree = "<group>"; };
 		3AC1C3B529BE34A1003E3CD7 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3AC1C3B729BE34CA003E3CD7 /* Pods-ServiceStorage.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Pods-ServiceStorage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,7 +249,11 @@
 		3AC1C40829BE3549003E3CD7 /* Manifest.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Manifest.lock; sourceTree = "<group>"; };
 		3AC1C40A29BE3549003E3CD7 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
 		3AC1C41629BE3633003E3CD7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		3AE9E6C729BD058B00D13B93 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AC39A452A1A86000053AF30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3AC39A4B2A1A86910053AF30 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AC39A4C2A1A86910053AF30 /* ServiceStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ServiceStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AC39A4D2A1A8B470053AF30 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3AC39A6D2A1A8D5D0053AF30 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		3AE9E6EC29BD098900D13B93 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3AE9E6EE29BD09AB00D13B93 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		3AE9E6F629BD19C000D13B93 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
@@ -219,8 +274,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AC1C3B029BE33FE003E3CD7 /* ServiceStorage.framework in Frameworks */,
 				3AE9E6F429BD0E3E00D13B93 /* iOSIntPackage in Frameworks */,
+				68250B582D607D34105122F0 /* Pods_Navigation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +283,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C6B5E77E4D21D6C1E743D9 /* Pods_ServiceStorage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +305,7 @@
 			children = (
 				3AB2E89829BD03140001665C /* User */,
 				3AADE15F295E9BAD009F9581 /* LoginViewController.swift */,
-				3AB2E89629BD02DB0001665C /* LoginViewControllerDelegate.swift */,
+				3AC39A4D2A1A8B470053AF30 /* SignUpViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -262,6 +318,7 @@
 				3A990C28294B157E001D0ECC /* Assets.xcassets */,
 				3A990C2A294B157E001D0ECC /* LaunchScreen.storyboard */,
 				3A96290B29BCFE11008916E2 /* UIColorExtension.swift */,
+				3AC39A6D2A1A8D5D0053AF30 /* Errors.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -270,11 +327,11 @@
 			isa = PBXGroup;
 			children = (
 				3A990C1E294B157D001D0ECC /* Navigation */,
-				3AE9E6C729BD058B00D13B93 /* Navigation.app */,
-				3AC1C3AA29BE33FD003E3CD7 /* ServiceStorage.framework */,
 				3AC1C3AB29BE33FE003E3CD7 /* ServiceStorage */,
 				725E8B264ED3EEE598222656 /* Pods */,
 				A17EED716CA026111CFAD6DA /* Frameworks */,
+				3AC39A4B2A1A86910053AF30 /* Navigation.app */,
+				3AC39A4C2A1A86910053AF30 /* ServiceStorage.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -288,6 +345,7 @@
 				3A96290829BCFD8F008916E2 /* Feed */,
 				3AB6E2492951B6AD00B07728 /* Profile */,
 				3A990C2D294B157E001D0ECC /* Info.plist */,
+				3AC39A452A1A86000053AF30 /* GoogleService-Info.plist */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -313,9 +371,6 @@
 		3AB2E89829BD03140001665C /* User */ = {
 			isa = PBXGroup;
 			children = (
-				3AB2E89929BD031E0001665C /* Checker.swift */,
-				3AB2E89B29BD03320001665C /* CurrentUserService.swift */,
-				3AB2E89D29BD03460001665C /* TestUserService.swift */,
 				3AB2E89F29BD03560001665C /* User.swift */,
 			);
 			path = User;
@@ -487,9 +542,17 @@
 		3AC1C40B29BE3549003E3CD7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				3AC39A5E2A1A8B470053AF30 /* FirebaseAuth */,
+				3AC39A602A1A8B470053AF30 /* FirebaseCore */,
+				3AC39A622A1A8B470053AF30 /* FirebaseCoreInternal */,
+				3AC39A642A1A8B470053AF30 /* FirebaseInstallations */,
+				3AC39A662A1A8B470053AF30 /* GoogleUtilities */,
+				3AC39A682A1A8B470053AF30 /* GTMSessionFetcher */,
+				3AC39A6A2A1A8B470053AF30 /* nanopb */,
 				3AC1C41129BE3549003E3CD7 /* Pods-Navigation */,
 				3AC1C41329BE3549003E3CD7 /* Pods-ServiceStorage */,
-				3AC1C41529BE3549003E3CD7 /* SnapKit.framework */,
+				3AC39A6C2A1A8B470053AF30 /* PromisesObjC */,
+				3AC1C41529BE3549003E3CD7 /* SnapKit */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -574,6 +637,8 @@
 			children = (
 				3AC1C3B629BE34CA003E3CD7 /* Pods-ServiceStorage */,
 				3AC1C3B529BE34A1003E3CD7 /* Podfile */,
+				248CF500B1432010DF22671E /* Pods_Navigation.framework */,
+				11FEFE0D888C53FEB17B1203 /* Pods_ServiceStorage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -613,7 +678,7 @@
 				3AE9E6F329BD0E3E00D13B93 /* iOSIntPackage */,
 			);
 			productName = Navigation;
-			productReference = 3AE9E6C729BD058B00D13B93 /* Navigation.app */;
+			productReference = 3AC39A4B2A1A86910053AF30 /* Navigation.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3AC1C3A929BE33FD003E3CD7 /* ServiceStorage */ = {
@@ -632,7 +697,7 @@
 			);
 			name = ServiceStorage;
 			productName = ServiceStorage;
-			productReference = 3AC1C3AA29BE33FD003E3CD7 /* ServiceStorage.framework */;
+			productReference = 3AC39A4C2A1A86910053AF30 /* ServiceStorage.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -643,7 +708,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					3A990C1B294B157D001D0ECC = {
 						CreatedOnToolsVersion = 14.1;
@@ -699,11 +764,76 @@
 			remoteRef = 3AC1C41229BE3549003E3CD7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3AC1C41529BE3549003E3CD7 /* SnapKit.framework */ = {
+		3AC1C41529BE3549003E3CD7 /* SnapKit */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
+			name = SnapKit;
 			path = SnapKit.framework;
 			remoteRef = 3AC1C41429BE3549003E3CD7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AC39A5E2A1A8B470053AF30 /* FirebaseAuth */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = FirebaseAuth;
+			path = FirebaseAuth.framework;
+			remoteRef = 3AC39A5D2A1A8B470053AF30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AC39A602A1A8B470053AF30 /* FirebaseCore */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = FirebaseCore;
+			path = FirebaseCore.framework;
+			remoteRef = 3AC39A5F2A1A8B470053AF30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AC39A622A1A8B470053AF30 /* FirebaseCoreInternal */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = FirebaseCoreInternal;
+			path = FirebaseCoreInternal.framework;
+			remoteRef = 3AC39A612A1A8B470053AF30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AC39A642A1A8B470053AF30 /* FirebaseInstallations */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = FirebaseInstallations;
+			path = FirebaseInstallations.framework;
+			remoteRef = 3AC39A632A1A8B470053AF30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AC39A662A1A8B470053AF30 /* GoogleUtilities */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = GoogleUtilities;
+			path = GoogleUtilities.framework;
+			remoteRef = 3AC39A652A1A8B470053AF30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AC39A682A1A8B470053AF30 /* GTMSessionFetcher */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = GTMSessionFetcher;
+			path = GTMSessionFetcher.framework;
+			remoteRef = 3AC39A672A1A8B470053AF30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AC39A6A2A1A8B470053AF30 /* nanopb */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = nanopb;
+			path = nanopb.framework;
+			remoteRef = 3AC39A692A1A8B470053AF30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AC39A6C2A1A8B470053AF30 /* PromisesObjC */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = PromisesObjC;
+			path = FBLPromises.framework;
+			remoteRef = 3AC39A6B2A1A8B470053AF30 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -714,6 +844,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A990C2C294B157E001D0ECC /* LaunchScreen.storyboard in Resources */,
+				3AC39A462A1A86000053AF30 /* GoogleService-Info.plist in Resources */,
 				3A990C29294B157E001D0ECC /* Assets.xcassets in Resources */,
 				3A990C27294B157D001D0ECC /* Main.storyboard in Resources */,
 			);
@@ -810,20 +941,18 @@
 				3AE9E70029BD1ADC00D13B93 /* ProfileCoordinator.swift in Sources */,
 				3AE9E6FA29BD1A3D00D13B93 /* MainCoordinator.swift in Sources */,
 				3AA0D18429E392A7003005FA /* NetworkManager.swift in Sources */,
+				3AC39A6E2A1A8D5D0053AF30 /* Errors.swift in Sources */,
 				3A114129294C506500CD28C6 /* InfoViewController.swift in Sources */,
 				3AB6E24C2951B6AD00B07728 /* ProfileHeaderView.swift in Sources */,
 				3AB2E8A029BD03560001665C /* User.swift in Sources */,
-				3AB2E89A29BD031E0001665C /* Checker.swift in Sources */,
+				3AC39A4E2A1A8B470053AF30 /* SignUpViewController.swift in Sources */,
 				3A41637A29624CAF001AEB66 /* PostTableViewCell.swift in Sources */,
-				3AB2E89C29BD03320001665C /* CurrentUserService.swift in Sources */,
 				3AE9E6FC29BD1A6A00D13B93 /* PhotoCoordinator.swift in Sources */,
-				3AB2E89E29BD03460001665C /* TestUserService.swift in Sources */,
 				3A83255629667F5400EDD1D9 /* ProfileCollectionViewCell.swift in Sources */,
 				3AE9E6FE29BD1A7E00D13B93 /* TabBarController.swift in Sources */,
 				3A990C34294B15B1001D0ECC /* FeedViewController.swift in Sources */,
 				3A83255429667DC200EDD1D9 /* PhotosViewController.swift in Sources */,
 				3A83255829667FD000EDD1D9 /* PhotosNames.swift in Sources */,
-				3AB2E89729BD02DB0001665C /* LoginViewControllerDelegate.swift in Sources */,
 				3AB6E24D2951B6AD00B07728 /* ProfileViewController.swift in Sources */,
 				3AE9E70229BD1AF600D13B93 /* FeedCoordinator.swift in Sources */,
 				3A990C22294B157D001D0ECC /* SceneDelegate.swift in Sources */,
@@ -1063,7 +1192,7 @@
 			baseConfigurationReference = E4D3D11AFBE999F7A1C4A662 /* Pods-ServiceStorage.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1098,7 +1227,7 @@
 			baseConfigurationReference = DD5C6EF6F86C7E0F4A75E3D2 /* Pods-ServiceStorage.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

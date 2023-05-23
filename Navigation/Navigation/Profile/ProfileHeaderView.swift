@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 class ProfileHeaderView: UITableViewHeaderFooterView {
     var currentUser = User(login: "0000", name: "BeliyBear", avatar: UIImage(named: "avatarImage") ?? .add, status: "waiting for something")

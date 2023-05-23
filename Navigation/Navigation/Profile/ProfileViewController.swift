@@ -1,5 +1,6 @@
 import UIKit
 import ServiceStorage
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     var user: User?
@@ -39,6 +40,9 @@ class ProfileViewController: UIViewController {
         #else
         view.backgroundColor = .white
         #endif
+
+        let signOutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(pushSignOutButton))
+        navigationItem.leftBarButtonItem = signOutButton
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +60,11 @@ class ProfileViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    @objc func pushSignOutButton(){
+        try? Auth.auth().signOut()
+        navigationController?.popViewController(animated: true)
     }
 }
 

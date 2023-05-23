@@ -27,7 +27,7 @@ class Factory {
         case .profile:
             let profileCoordinator = ProfileCoordinator(navigationController: navigationController)
             let controller = LoginViewController(coordinator: profileCoordinator)
-            controller.loginDelegate = MyLoginFactory().makeLoginInspector()
+            controller.logInDelegate = MyLoginFactory().makeCheckerService()
             navigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), tag: 1)
             navigationController.setViewControllers([controller], animated: true)
 
