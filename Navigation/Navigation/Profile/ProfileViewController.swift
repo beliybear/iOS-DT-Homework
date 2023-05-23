@@ -45,10 +45,6 @@ class ProfileViewController: UIViewController {
         navigationItem.leftBarButtonItem = signOutButton
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
     private func setupTableView() {
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: "PostTableViewCell")
         tableView.register(ProfileHeaderView.self, forHeaderFooterViewReuseIdentifier: "ProfileHeaderView")
@@ -97,7 +93,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
                 return cell
             }
             let post = self.profileViewModel.postsData[indexPath.row]
-            let viewModel = PostTableViewCell.ViewPost(author: post.author, descriptionText: post.descriptionText, image: UIImage(named: post.image), likes: post.likes, views: post.views)
+            let viewModel = PostTableViewCell.ViewPost(author: post.author, descriptionText: post.descriptionText, image: UIImage(named: post.image)!, likes: post.likes, views: post.views)
             cell.setup(with: viewModel)
             return cell
         }

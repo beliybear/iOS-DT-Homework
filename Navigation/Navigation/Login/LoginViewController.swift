@@ -56,10 +56,11 @@ class LoginViewController: UIViewController {
         login.textAlignment = .left
         login.placeholder = "  Email or phone"
         login.text = "beliybear@mail.ru"
-        login.tintColor =  UIColor (named: "MyColor")
+        login.tintColor = UIColor(named: "MyColor")
         login.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         login.autocapitalizationType = .none
         login.clearButtonMode = .whileEditing
+        login.keyboardType = .emailAddress
         login.delegate = self
         login.translatesAutoresizingMaskIntoConstraints = false
         return login

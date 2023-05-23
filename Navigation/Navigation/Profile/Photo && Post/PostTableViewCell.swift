@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import CoreData
 
 class PostTableViewCell: UITableViewCell {
     
     struct ViewPost {
         var author: String
         var descriptionText: String
-        var image: UIImage?
+        var image: UIImage
         var likes: Int
         var views: Int
     }
@@ -59,7 +60,7 @@ class PostTableViewCell: UITableViewCell {
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
+ }()
     
     private lazy var viewLabel: UILabel = {
         let label = UILabel()
@@ -71,8 +72,13 @@ class PostTableViewCell: UITableViewCell {
     
     private var indexPath: IndexPath?
     
+    private var viewPost: ViewPost?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
+        doubleTap.numberOfTapsRequired = 2
+        contentView.addGestureRecognizer(doubleTap)
         setupView()
     }
     
@@ -88,11 +94,24 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func setup(with viewPost: ViewPost) {
+        self.viewPost = viewPost
         authorText.text = viewPost.author
         descriptionText.text = viewPost.descriptionText
         postImage.image = viewPost.image
         likesLabel.text = "Likes: \(viewPost.likes)"
         viewLabel.text = "Views: \(viewPost.views)"
+    }
+    
+    @objc private func handleDoubleTap() {
+        guard let viewPost = viewPost else { return }
+        let context = CoreDataStack.shared.persistentContainer.viewContext
+        let likedPost = NSEntityDescription.insertNewObject(forEntityName: "LikedPost", into: context) as! LikedPost
+        likedPost.author = viewPost.author
+        likedPost.descriptionText = viewPost.descriptionText
+        likedPost.imageData = viewPost.image.jpegData(compressionQuality: 1.0)
+        likedPost.likes = Int32(viewPost.likes)
+        likedPost.views = Int32(viewPost.views)
+        CoreDataStack.shared.saveContext()
     }
     
     private func setupView() {

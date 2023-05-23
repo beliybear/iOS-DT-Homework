@@ -11,6 +11,7 @@ class TabBarController: UITabBarController {
 
     private let profileViewController = Factory(navigationController: UINavigationController(), viewController: .profile)
     private let feedViewController = Factory(navigationController: UINavigationController(), viewController: .feed)
+    private let likedViewController = Factory(navigationController: UINavigationController(), viewController: .liked)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,6 @@ class TabBarController: UITabBarController {
     }
     
     func viewControllers() {
-        viewControllers = [feedViewController.navigationController, profileViewController.navigationController]
+        viewControllers = [feedViewController.navigationController, likedViewController.navigationController, profileViewController.navigationController]
     }
 }

@@ -73,7 +73,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         addSubview()
         setupConstraints()
         buttonPressed()
-        setUser(avatar: UIImage(named: "avatarImage")!, name: "BeliyBear", status: "Something...")
+        setUser(avatar: UIImage(named: "avatarImage")!, name: "BeliyBear", status: "")
     }
     
     required init?(coder: NSCoder) {
