@@ -153,6 +153,7 @@
 		248CF500B1432010DF22671E /* Pods_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A114128294C506500CD28C6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		3A41637929624CAF001AEB66 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		3A449EA82A1D4F1B006E65CE /* LikedPostsModelV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LikedPostsModelV2.xcdatamodel; sourceTree = "<group>"; };
 		3A6B2B0029C8742700B0BB44 /* PhotoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoData.swift; sourceTree = "<group>"; };
 		3A83255129667DAB00EDD1D9 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		3A83255329667DC200EDD1D9 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -1319,9 +1320,10 @@
 		3AEC491C2A1D3993003B454E /* LikedPostsModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				3A449EA82A1D4F1B006E65CE /* LikedPostsModelV2.xcdatamodel */,
 				3AEC491D2A1D3993003B454E /* LikedPostsModel.xcdatamodel */,
 			);
-			currentVersion = 3AEC491D2A1D3993003B454E /* LikedPostsModel.xcdatamodel */;
+			currentVersion = 3A449EA82A1D4F1B006E65CE /* LikedPostsModelV2.xcdatamodel */;
 			name = LikedPostsModel.xcdatamodeld;
 			path = "../../../../../Скриншоты/LikedPostsModel.xcdatamodeld";
 			sourceTree = "<group>";
