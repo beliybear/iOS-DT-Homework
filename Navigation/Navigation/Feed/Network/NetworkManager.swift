@@ -17,7 +17,7 @@ enum AppConfiguration: String, CaseIterable {
 
 // Задание 2.1
 
-struct Data: Codable {
+struct Datas: Codable {
     let userId, id: Int
     let title: String
     let completed: Bool

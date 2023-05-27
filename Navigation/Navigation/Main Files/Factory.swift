@@ -11,31 +11,38 @@ class Factory {
     enum Views {
         case profile
         case feed
+        case liked
     }
-
+    
     let navigationController: UINavigationController
     let viewController: Views
-
+    
     init(navigationController: UINavigationController, viewController: Views) {
         self.navigationController = navigationController
         self.viewController = viewController
         startModule()
     }
-
+    
     private func startModule() {
         switch viewController {
         case .profile:
             let profileCoordinator = ProfileCoordinator(navigationController: navigationController)
             let controller = LoginViewController(coordinator: profileCoordinator)
             controller.logInDelegate = MyLoginFactory().makeCheckerService()
-            navigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), tag: 1)
+            navigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), tag: 2)
             navigationController.setViewControllers([controller], animated: true)
-
+            
         case .feed:
             let feedCoordinator = FeedCoordinator()
             let controller = FeedViewController(coordinator: feedCoordinator)
-            navigationController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(named: "doc.richtext"), tag: 0)
+            navigationController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "doc.richtext"), tag: 0)
             navigationController.setViewControllers([controller], animated: true)
+            
+        case .liked:
+            let controller = LikedPostsViewController()
+            navigationController.tabBarItem = UITabBarItem(title: "Liked", image: UIImage(systemName: "heart"), tag: 1)
+            navigationController.setViewControllers([controller], animated: true)
+            
         }
     }
 }

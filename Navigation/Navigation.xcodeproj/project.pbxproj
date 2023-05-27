@@ -10,6 +10,7 @@
 		30C6B5E77E4D21D6C1E743D9 /* Pods_ServiceStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FEFE0D888C53FEB17B1203 /* Pods_ServiceStorage.framework */; };
 		3A114129294C506500CD28C6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A114128294C506500CD28C6 /* InfoViewController.swift */; };
 		3A41637A29624CAF001AEB66 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41637929624CAF001AEB66 /* PostTableViewCell.swift */; };
+		3A449ECA2A1D5081006E65CE /* LikedPostsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A449EC82A1D5081006E65CE /* LikedPostsModel.xcdatamodeld */; };
 		3A6B2B0129C8742700B0BB44 /* PhotoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B2B0029C8742700B0BB44 /* PhotoData.swift */; };
 		3A83255229667DAB00EDD1D9 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83255129667DAB00EDD1D9 /* PhotosTableViewCell.swift */; };
 		3A83255429667DC200EDD1D9 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83255329667DC200EDD1D9 /* PhotosViewController.swift */; };
@@ -18,7 +19,6 @@
 		3A96290C29BCFE11008916E2 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96290B29BCFE11008916E2 /* UIColorExtension.swift */; };
 		3A990C20294B157D001D0ECC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A990C1F294B157D001D0ECC /* AppDelegate.swift */; };
 		3A990C22294B157D001D0ECC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A990C21294B157D001D0ECC /* SceneDelegate.swift */; };
-		3A990C27294B157D001D0ECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A990C25294B157D001D0ECC /* Main.storyboard */; };
 		3A990C29294B157E001D0ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A990C28294B157E001D0ECC /* Assets.xcassets */; };
 		3A990C2C294B157E001D0ECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A990C2A294B157E001D0ECC /* LaunchScreen.storyboard */; };
 		3A990C34294B15B1001D0ECC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A990C33294B15B1001D0ECC /* FeedViewController.swift */; };
@@ -43,6 +43,8 @@
 		3AE9E70029BD1ADC00D13B93 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9E6FF29BD1ADB00D13B93 /* ProfileCoordinator.swift */; };
 		3AE9E70229BD1AF600D13B93 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9E70129BD1AF600D13B93 /* FeedCoordinator.swift */; };
 		3AE9E70929BD1DC800D13B93 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9E70829BD1DC800D13B93 /* ProfileViewModel.swift */; };
+		3AEC49072A1D2D94003B454E /* LikedPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC49062A1D2D94003B454E /* LikedPostsViewController.swift */; };
+		3AEC490C2A1D300E003B454E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC490B2A1D300E003B454E /* CoreDataStack.swift */; };
 		68250B582D607D34105122F0 /* Pods_Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248CF500B1432010DF22671E /* Pods_Navigation.framework */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +153,7 @@
 		248CF500B1432010DF22671E /* Pods_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A114128294C506500CD28C6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		3A41637929624CAF001AEB66 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		3A449EC92A1D5081006E65CE /* LikedPostsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LikedPostsModel.xcdatamodel; sourceTree = "<group>"; };
 		3A6B2B0029C8742700B0BB44 /* PhotoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoData.swift; sourceTree = "<group>"; };
 		3A83255129667DAB00EDD1D9 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		3A83255329667DC200EDD1D9 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -159,7 +162,6 @@
 		3A96290B29BCFE11008916E2 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		3A990C1F294B157D001D0ECC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A990C21294B157D001D0ECC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A990C26294B157D001D0ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A990C28294B157E001D0ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A990C2B294B157E001D0ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A990C2D294B157E001D0ECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -263,6 +265,8 @@
 		3AE9E6FF29BD1ADB00D13B93 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		3AE9E70129BD1AF600D13B93 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		3AE9E70829BD1DC800D13B93 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		3AEC49062A1D2D94003B454E /* LikedPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPostsViewController.swift; sourceTree = "<group>"; };
+		3AEC490B2A1D300E003B454E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		495E14A58A94C6DADB389801 /* Pods-Navigation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation.debug.xcconfig"; path = "Target Support Files/Pods-Navigation/Pods-Navigation.debug.xcconfig"; sourceTree = "<group>"; };
 		4BBA4DC12C9773C96F3EC1B2 /* Pods-Navigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation.release.xcconfig"; path = "Target Support Files/Pods-Navigation/Pods-Navigation.release.xcconfig"; sourceTree = "<group>"; };
 		DD5C6EF6F86C7E0F4A75E3D2 /* Pods-ServiceStorage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceStorage.release.xcconfig"; path = "Target Support Files/Pods-ServiceStorage/Pods-ServiceStorage.release.xcconfig"; sourceTree = "<group>"; };
@@ -314,11 +318,11 @@
 			isa = PBXGroup;
 			children = (
 				3A990C1F294B157D001D0ECC /* AppDelegate.swift */,
-				3A990C25294B157D001D0ECC /* Main.storyboard */,
 				3A990C28294B157E001D0ECC /* Assets.xcassets */,
 				3A990C2A294B157E001D0ECC /* LaunchScreen.storyboard */,
 				3A96290B29BCFE11008916E2 /* UIColorExtension.swift */,
 				3AC39A6D2A1A8D5D0053AF30 /* Errors.swift */,
+				3AEC490B2A1D300E003B454E /* CoreDataStack.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -338,6 +342,7 @@
 		3A990C1E294B157D001D0ECC /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				3AEC49052A1D2D82003B454E /* Liked */,
 				3AE9E6F529BD19A700D13B93 /* Main Files */,
 				3AE9E6EB29BD097F00D13B93 /* Custom */,
 				3A96290A29BCFDBB008916E2 /* Others */,
@@ -615,6 +620,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3AEC49052A1D2D82003B454E /* Liked */ = {
+			isa = PBXGroup;
+			children = (
+				3AEC49062A1D2D94003B454E /* LikedPostsViewController.swift */,
+				3A449EC82A1D5081006E65CE /* LikedPostsModel.xcdatamodeld */,
+			);
+			path = Liked;
+			sourceTree = "<group>";
+		};
 		725E8B264ED3EEE598222656 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -846,7 +860,6 @@
 				3A990C2C294B157E001D0ECC /* LaunchScreen.storyboard in Resources */,
 				3AC39A462A1A86000053AF30 /* GoogleService-Info.plist in Resources */,
 				3A990C29294B157E001D0ECC /* Assets.xcassets in Resources */,
-				3A990C27294B157D001D0ECC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -936,9 +949,11 @@
 				3AE9E6EF29BD09AB00D13B93 /* FeedModel.swift in Sources */,
 				3AE9E70929BD1DC800D13B93 /* ProfileViewModel.swift in Sources */,
 				3AE9E6ED29BD098900D13B93 /* CustomButton.swift in Sources */,
+				3AEC490C2A1D300E003B454E /* CoreDataStack.swift in Sources */,
 				3A83255229667DAB00EDD1D9 /* PhotosTableViewCell.swift in Sources */,
 				3A6B2B0129C8742700B0BB44 /* PhotoData.swift in Sources */,
 				3AE9E70029BD1ADC00D13B93 /* ProfileCoordinator.swift in Sources */,
+				3AEC49072A1D2D94003B454E /* LikedPostsViewController.swift in Sources */,
 				3AE9E6FA29BD1A3D00D13B93 /* MainCoordinator.swift in Sources */,
 				3AA0D18429E392A7003005FA /* NetworkManager.swift in Sources */,
 				3AC39A6E2A1A8D5D0053AF30 /* Errors.swift in Sources */,
@@ -953,6 +968,7 @@
 				3A990C34294B15B1001D0ECC /* FeedViewController.swift in Sources */,
 				3A83255429667DC200EDD1D9 /* PhotosViewController.swift in Sources */,
 				3A83255829667FD000EDD1D9 /* PhotosNames.swift in Sources */,
+				3A449ECA2A1D5081006E65CE /* LikedPostsModel.xcdatamodeld in Sources */,
 				3AB6E24D2951B6AD00B07728 /* ProfileViewController.swift in Sources */,
 				3AE9E70229BD1AF600D13B93 /* FeedCoordinator.swift in Sources */,
 				3A990C22294B157D001D0ECC /* SceneDelegate.swift in Sources */,
@@ -978,14 +994,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3A990C25294B157D001D0ECC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A990C26294B157D001D0ECC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3A990C2A294B157E001D0ECC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1306,6 +1314,19 @@
 			productName = iOSIntPackage;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		3A449EC82A1D5081006E65CE /* LikedPostsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A449EC92A1D5081006E65CE /* LikedPostsModel.xcdatamodel */,
+			);
+			currentVersion = 3A449EC92A1D5081006E65CE /* LikedPostsModel.xcdatamodel */;
+			path = LikedPostsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3A990C14294B157D001D0ECC /* Project object */;
 }
