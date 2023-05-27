@@ -93,7 +93,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
                 return cell
             }
             let post = self.profileViewModel.postsData[indexPath.row]
-            let viewModel = PostTableViewCell.ViewPost(author: post.author, descriptionText: post.descriptionText, image: UIImage(named: post.image)!, likes: post.likes, views: post.views)
+            let postId = UUID().uuidString
+            let viewModel = PostTableViewCell.ViewPost(author: post.author, descriptionText: post.descriptionText, image: UIImage(named: post.image)!, likes: post.likes, views: post.views, postId: postId)
             cell.setup(with: viewModel)
             return cell
         }

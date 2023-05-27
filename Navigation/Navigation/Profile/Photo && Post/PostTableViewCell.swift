@@ -16,6 +16,7 @@ class PostTableViewCell: UITableViewCell {
         var image: UIImage
         var likes: Int
         var views: Int
+        var postId: String
     }
     
     private lazy var authorText: UITextView = {
@@ -26,6 +27,7 @@ class PostTableViewCell: UITableViewCell {
         authorText.translatesAutoresizingMaskIntoConstraints = false
         authorText.isScrollEnabled = false
         authorText.isEditable = false
+        authorText.isUserInteractionEnabled = false
         return authorText
     }()
     
@@ -36,6 +38,7 @@ class PostTableViewCell: UITableViewCell {
         descriptionText.translatesAutoresizingMaskIntoConstraints = false
         descriptionText.isScrollEnabled = false
         descriptionText.isEditable = false
+        descriptionText.isUserInteractionEnabled = false
         return descriptionText
     }()
     
@@ -50,6 +53,7 @@ class PostTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
+        stackView.isUserInteractionEnabled = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -59,14 +63,24 @@ class PostTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = false
         return label
- }()
+    }()
+    
+    private lazy var heartImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "heart")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isHidden = true
+        return imageView
+    }()
     
     private lazy var viewLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = false
         return label
     }()
     
@@ -102,16 +116,28 @@ class PostTableViewCell: UITableViewCell {
         viewLabel.text = "Views: \(viewPost.views)"
     }
     
+    private func animateHeart() {
+        heartImageView.isHidden = false
+        heartImageView.alpha = 1.0
+        heartImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
+            self.heartImageView.transform = CGAffineTransform.identity
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.3, delay: 0.2, options: [.curveEaseInOut], animations: {
+                self.heartImageView.alpha = 0.0
+            }, completion: { _ in
+                self.heartImageView.isHidden = true
+            })
+        })
+    }
+    
     @objc private func handleDoubleTap() {
         guard let viewPost = viewPost else { return }
-        let context = CoreDataStack.shared.persistentContainer.viewContext
-        let likedPost = NSEntityDescription.insertNewObject(forEntityName: "LikedPost", into: context) as! LikedPost
-        likedPost.author = viewPost.author
-        likedPost.descriptionText = viewPost.descriptionText
-        likedPost.imageData = viewPost.image.jpegData(compressionQuality: 1.0)
-        likedPost.likes = Int32(viewPost.likes)
-        likedPost.views = Int32(viewPost.views)
-        CoreDataStack.shared.saveContext()
+        if !CoreDataStack.shared.isPostLiked(postId: viewPost.postId) {
+            CoreDataStack.shared.saveLikedPost(viewPost: viewPost, postId: viewPost.postId)
+            animateHeart()
+        }
     }
     
     private func setupView() {
@@ -119,11 +145,12 @@ class PostTableViewCell: UITableViewCell {
         addSubview(descriptionText)
         addSubview(postImage)
         addSubview(stackViewHorizontal)
+        addSubview(heartImageView)
         stackViewHorizontal.addArrangedSubview(likesLabel)
         stackViewHorizontal.addArrangedSubview(viewLabel)
         
         NSLayoutConstraint.activate([
-        
+            
             authorText.topAnchor.constraint(equalTo: self.topAnchor),
             authorText.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             authorText.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
@@ -140,7 +167,12 @@ class PostTableViewCell: UITableViewCell {
             stackViewHorizontal.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             stackViewHorizontal.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             stackViewHorizontal.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            stackViewHorizontal.heightAnchor.constraint(equalToConstant: 40)
+            stackViewHorizontal.heightAnchor.constraint(equalToConstant: 40),
+            
+            heartImageView.centerXAnchor.constraint(equalTo: postImage.centerXAnchor),
+            heartImageView.centerYAnchor.constraint(equalTo: postImage.centerYAnchor),
+            heartImageView.widthAnchor.constraint(equalToConstant: 100),
+            heartImageView.heightAnchor.constraint(equalToConstant: 100)
             
         ])
     }

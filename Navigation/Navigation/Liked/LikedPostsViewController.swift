@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 
 class LikedPostsViewController: UITableViewController {
+    
 
     private var likedPosts: [LikedPost] = []
 
@@ -17,16 +18,15 @@ class LikedPostsViewController: UITableViewController {
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: "PostTableViewCell")
         fetchLikedPosts()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchLikedPosts()
+    }
+    
     private func fetchLikedPosts() {
-        let context = CoreDataStack.shared.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<LikedPost> = LikedPost.fetchRequest()
-        do {
-            likedPosts = try context.fetch(fetchRequest)
-            tableView.reloadData()
-        } catch {
-            print("Failed to fetch liked posts: \(error)")
-        }
+        likedPosts = CoreDataStack.shared.fetchLikedPosts()
+        tableView.reloadData()
     }
 
     // MARK: - UITableViewDataSource
@@ -45,7 +45,8 @@ class LikedPostsViewController: UITableViewController {
             descriptionText: likedPost.descriptionText ?? "",
             image: UIImage(data: likedPost.imageData!)!,
             likes: Int(likedPost.likes),
-            views: Int(likedPost.views)
+            views: Int(likedPost.views),
+            postId: String(likedPost.postId!)
         )
  cell.setup(with: viewModel)
         return cell
