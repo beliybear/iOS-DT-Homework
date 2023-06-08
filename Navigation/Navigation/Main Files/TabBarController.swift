@@ -10,7 +10,7 @@ import UIKit
 class TabBarController: UITabBarController {
 
     private let profileViewController = Factory(navigationController: UINavigationController(), viewController: .profile)
-    private let feedViewController = Factory(navigationController: UINavigationController(), viewController: .feed)
+    private let locationViewController = Factory(navigationController: UINavigationController(), viewController: .location)
     private let likedViewController = Factory(navigationController: UINavigationController(), viewController: .liked)
     
     override func viewDidLoad() {
@@ -20,6 +20,6 @@ class TabBarController: UITabBarController {
     }
     
     func viewControllers() {
-        viewControllers = [feedViewController.navigationController, likedViewController.navigationController, profileViewController.navigationController]
+        viewControllers = [locationViewController.navigationController, likedViewController.navigationController, profileViewController.navigationController]
     }
 }

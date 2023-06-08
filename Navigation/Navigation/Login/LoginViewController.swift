@@ -212,6 +212,7 @@ class LoginViewController: UIViewController {
             pickUpButton.heightAnchor.constraint(equalToConstant: 50),
             pickUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             pickUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            pickUpButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
