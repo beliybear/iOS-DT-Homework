@@ -41,8 +41,9 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .white
         #endif
 
-        let signOutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(pushSignOutButton))
+        let signOutButton = UIBarButtonItem(title: NSLocalizedString("Logout", comment: ""), style: .plain, target: self, action: #selector(pushSignOutButton))
         navigationItem.leftBarButtonItem = signOutButton
+        
     }
     
     private func setupTableView() {

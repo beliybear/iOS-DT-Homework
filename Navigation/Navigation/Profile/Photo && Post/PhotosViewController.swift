@@ -36,6 +36,7 @@ class PhotosViewController: UIViewController {
         view.addSubview(collectionView)
         allImages = PhotoData.photos
         setupConstraints()
+        setupButton()
         
         let start = CFAbsoluteTimeGetCurrent()
         imageProcessor.processImagesOnThread(sourceImages: allImages, filter: .fade, qos: .background) { [weak self] completion in
@@ -52,14 +53,23 @@ class PhotosViewController: UIViewController {
         }
     }
     
+    private func setupButton() {
+        let cancelButton = UIBarButtonItem(title: NSLocalizedString("Back", comment: ""), style: .plain, target: self, action: #selector(pushCancelButton))
+        navigationItem.leftBarButtonItem = cancelButton
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
+    @objc private func pushCancelButton(){
+        navigationController?.popViewController(animated: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.title = "Photo Gallery"
+        self.navigationItem.title = NSLocalizedString("Photo Gallery", comment: "")
     }
     
     private func setupConstraints() {

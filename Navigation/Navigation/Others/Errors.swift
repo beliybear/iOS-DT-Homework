@@ -22,28 +22,28 @@ extension Authorization: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .emptyPasswordOrEmail:
-            return NSLocalizedString("Похоже, вы оставили поле Email или Password пустым",
+            return NSLocalizedString("Seems like you forgot to write Email or Password",
                                      comment: "")
         case .invalidPassword:
-            return NSLocalizedString("Неверный email или пароль",
+            return NSLocalizedString("Wrong Email or Password",
                                      comment: "")
         case .weakPassword:
-            return NSLocalizedString("Пароль состоит менее чем из 6 символов",
+            return NSLocalizedString("The password consists of less than 6 characters",
                                      comment: "")
         case .mismatchPassword:
-            return NSLocalizedString("Введенные пароли не совпадают",
+            return NSLocalizedString("Passwords entered do not match",
                                      comment: "")
         case .notFound:
             return NSLocalizedString("Error Description: The specified item could not be found.",
                                      comment: "")
         case .emailAlreadyInUse:
-            return NSLocalizedString("Такой email уже используется",
+            return NSLocalizedString("Such email is already in use",
                                      comment: "")
         case .invalidEmail:
-            return NSLocalizedString("Неверно введен email",
+            return NSLocalizedString("Incorrect Email",
                                      comment: "")
         case .unexpected:
-            return NSLocalizedString("Что-то пошло не так",
+            return NSLocalizedString("Something went wrong",
                                      comment: "")
         }
     }

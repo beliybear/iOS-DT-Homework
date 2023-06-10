@@ -9,7 +9,7 @@ import UIKit
 
 class PostViewController: UIViewController {
     var infoViewController = InfoViewController()
-    var titlePost: String = "Anonymous"
+    var titlePost: String = NSLocalizedString("Anonymous", comment: "")
     override func viewDidLoad() {
         super.viewDidLoad()
         
