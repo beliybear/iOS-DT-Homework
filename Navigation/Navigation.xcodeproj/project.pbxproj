@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		30C6B5E77E4D21D6C1E743D9 /* Pods_ServiceStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FEFE0D888C53FEB17B1203 /* Pods_ServiceStorage.framework */; };
 		3A114129294C506500CD28C6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A114128294C506500CD28C6 /* InfoViewController.swift */; };
+		3A3FDC522A3218B80030967D /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FDC512A3218B80030967D /* LocationViewController.swift */; };
+		3A3FDC542A321F940030967D /* CapitalAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FDC532A321F940030967D /* CapitalAnnotation.swift */; };
 		3A41637A29624CAF001AEB66 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41637929624CAF001AEB66 /* PostTableViewCell.swift */; };
 		3A449ECA2A1D5081006E65CE /* LikedPostsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A449EC82A1D5081006E65CE /* LikedPostsModel.xcdatamodeld */; };
 		3A6B2B0129C8742700B0BB44 /* PhotoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B2B0029C8742700B0BB44 /* PhotoData.swift */; };
@@ -152,6 +154,8 @@
 		11FEFE0D888C53FEB17B1203 /* Pods_ServiceStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		248CF500B1432010DF22671E /* Pods_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A114128294C506500CD28C6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		3A3FDC512A3218B80030967D /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		3A3FDC532A321F940030967D /* CapitalAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapitalAnnotation.swift; sourceTree = "<group>"; };
 		3A41637929624CAF001AEB66 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		3A449EC92A1D5081006E65CE /* LikedPostsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LikedPostsModel.xcdatamodel; sourceTree = "<group>"; };
 		3A6B2B0029C8742700B0BB44 /* PhotoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoData.swift; sourceTree = "<group>"; };
@@ -294,6 +298,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A3FDC502A3218A90030967D /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				3A3FDC512A3218B80030967D /* LocationViewController.swift */,
+				3A3FDC532A321F940030967D /* CapitalAnnotation.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		3A96290829BCFD8F008916E2 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +355,7 @@
 		3A990C1E294B157D001D0ECC /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				3A3FDC502A3218A90030967D /* Location */,
 				3AEC49052A1D2D82003B454E /* Liked */,
 				3AE9E6F529BD19A700D13B93 /* Main Files */,
 				3AE9E6EB29BD097F00D13B93 /* Custom */,
@@ -953,9 +967,11 @@
 				3A83255229667DAB00EDD1D9 /* PhotosTableViewCell.swift in Sources */,
 				3A6B2B0129C8742700B0BB44 /* PhotoData.swift in Sources */,
 				3AE9E70029BD1ADC00D13B93 /* ProfileCoordinator.swift in Sources */,
+				3A3FDC542A321F940030967D /* CapitalAnnotation.swift in Sources */,
 				3AEC49072A1D2D94003B454E /* LikedPostsViewController.swift in Sources */,
 				3AE9E6FA29BD1A3D00D13B93 /* MainCoordinator.swift in Sources */,
 				3AA0D18429E392A7003005FA /* NetworkManager.swift in Sources */,
+				3A3FDC522A3218B80030967D /* LocationViewController.swift in Sources */,
 				3AC39A6E2A1A8D5D0053AF30 /* Errors.swift in Sources */,
 				3A114129294C506500CD28C6 /* InfoViewController.swift in Sources */,
 				3AB6E24C2951B6AD00B07728 /* ProfileHeaderView.swift in Sources */,
@@ -1133,6 +1149,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Navigation/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Navigation;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Required for location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Required for location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required for location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "А";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -1171,6 +1190,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Navigation/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Navigation;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Required for location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Required for location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required for location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "А";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

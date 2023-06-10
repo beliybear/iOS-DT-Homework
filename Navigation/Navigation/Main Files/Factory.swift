@@ -12,6 +12,7 @@ class Factory {
         case profile
         case feed
         case liked
+        case location
     }
     
     let navigationController: UINavigationController
@@ -41,6 +42,11 @@ class Factory {
         case .liked:
             let controller = LikedPostsViewController()
             navigationController.tabBarItem = UITabBarItem(title: "Liked", image: UIImage(systemName: "heart"), tag: 1)
+            navigationController.setViewControllers([controller], animated: true)
+            
+        case .location:
+            let controller = LocationViewController()
+            navigationController.tabBarItem = UITabBarItem(title: "Location", image: UIImage(systemName: "location"), tag: 0)
             navigationController.setViewControllers([controller], animated: true)
             
         }
