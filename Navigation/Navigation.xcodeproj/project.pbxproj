@@ -1153,9 +1153,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Navigation/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Navigation;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Required for location";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Required for location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required for location";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "А";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -1194,9 +1194,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Navigation/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Navigation;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Required for location";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Required for location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required for location";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "А";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
