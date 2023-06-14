@@ -30,23 +30,23 @@ class Factory {
             let profileCoordinator = ProfileCoordinator(navigationController: navigationController)
             let controller = LoginViewController(coordinator: profileCoordinator)
             controller.logInDelegate = MyLoginFactory().makeCheckerService()
-            navigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), tag: 2)
+            navigationController.tabBarItem = UITabBarItem(title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person.crop.circle"), tag: 2)
             navigationController.setViewControllers([controller], animated: true)
             
         case .feed:
             let feedCoordinator = FeedCoordinator()
             let controller = FeedViewController(coordinator: feedCoordinator)
-            navigationController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "doc.richtext"), tag: 0)
+            navigationController.tabBarItem = UITabBarItem(title: NSLocalizedString("Feed", comment: ""), image: UIImage(systemName: "doc.richtext"), tag: 0)
             navigationController.setViewControllers([controller], animated: true)
             
         case .liked:
             let controller = LikedPostsViewController()
-            navigationController.tabBarItem = UITabBarItem(title: "Liked", image: UIImage(systemName: "heart"), tag: 1)
+            navigationController.tabBarItem = UITabBarItem(title: NSLocalizedString("Liked", comment: ""), image: UIImage(systemName: "heart"), tag: 1)
             navigationController.setViewControllers([controller], animated: true)
             
         case .location:
             let controller = LocationViewController()
-            navigationController.tabBarItem = UITabBarItem(title: "Location", image: UIImage(systemName: "location"), tag: 0)
+            navigationController.tabBarItem = UITabBarItem(title: NSLocalizedString("Location", comment: ""), image: UIImage(systemName: "location"), tag: 0)
             navigationController.setViewControllers([controller], animated: true)
             
         }

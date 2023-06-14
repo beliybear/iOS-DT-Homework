@@ -28,7 +28,7 @@ class SignupViewController: UIViewController {
         let textField = UITextField()
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16)
-        textField.placeholder = "Email"
+        textField.placeholder = NSLocalizedString("Email", comment: "")
         textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -38,7 +38,7 @@ class SignupViewController: UIViewController {
         let textField = UITextField()
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16)
-        textField.placeholder = "Password"
+        textField.placeholder = NSLocalizedString("Password", comment: "")
         textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +49,7 @@ class SignupViewController: UIViewController {
         let textField = UITextField()
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16)
-        textField.placeholder = "Confirm password"
+        textField.placeholder = NSLocalizedString("Confirm password", comment: "")
         textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +58,7 @@ class SignupViewController: UIViewController {
 
     private let createAccountButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Sign Up", for: .normal)
+        button.setTitle(NSLocalizedString("Sign Up", comment: ""), for: .normal)
         button.layer.cornerRadius = 10
         button.setTitleColor(UIColor.white, for: .normal)
         button.backgroundColor = UIColor(patternImage: UIImage (named: "blue_pixel")!)
@@ -111,7 +111,7 @@ class SignupViewController: UIViewController {
     }
 
     private func setupButton() {
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(pushCancelButton))
+        let cancelButton = UIBarButtonItem(title: NSLocalizedString("Back", comment: ""), style: .plain, target: self, action: #selector(pushCancelButton))
         navigationItem.leftBarButtonItem = cancelButton
     }
 
@@ -138,36 +138,36 @@ class SignupViewController: UIViewController {
             if error != nil {
                 switch error {
                 case .emptyPasswordOrEmail:
-                    let alert = UIAlertController(title: "Ошибка", message: Authorization.emptyPasswordOrEmail.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: Authorization.emptyPasswordOrEmail.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true)
                 case .invalidPassword:
-                    let alert = UIAlertController(title: "Ошибка", message: Authorization.invalidPassword.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: Authorization.invalidPassword.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true)
                 case .weakPassword:
-                    let alert = UIAlertController(title: "Ошибка", message: Authorization.weakPassword.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: Authorization.weakPassword.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true)
                 case .mismatchPassword:
-                    let alert = UIAlertController(title: "Ошибка", message: Authorization.mismatchPassword.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: Authorization.mismatchPassword.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true)
                 case .notFound:
-                    let alert = UIAlertController(title: "Ошибка", message: Authorization.notFound.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: Authorization.notFound.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true)
                 case .emailAlreadyInUse:
-                    let alert = UIAlertController(title: "Ошибка", message: Authorization.emailAlreadyInUse.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: Authorization.emailAlreadyInUse.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true)
                 case .invalidEmail:
-                    let alert = UIAlertController(title: "Ошибка", message: Authorization.invalidEmail.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: Authorization.invalidEmail.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true)
                 case .unexpected:
-                    let alert = UIAlertController(title: "Ошибка", message: Authorization.unexpected.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: Authorization.unexpected.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true)
                 default:
                     return

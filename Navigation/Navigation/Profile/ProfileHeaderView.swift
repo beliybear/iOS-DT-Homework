@@ -35,7 +35,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         let status = UILabel()
         status.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         status.textColor = .gray
-        status.text = "Waiting for something..."
+        status.text = NSLocalizedString("Waiting for something...", comment: "")
         status.translatesAutoresizingMaskIntoConstraints = false
         return status
     }()
@@ -54,14 +54,14 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         text.layer.cornerRadius = 12
         text.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         text.textColor = .black
-        text.placeholder = "write something"
+        text.placeholder = NSLocalizedString("write something", comment: "")
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
     
     private lazy var changeTitle: UIButton = {
         let titleButton = UIButton()
-        titleButton.setTitle("Profile", for: .normal)
+        titleButton.setTitle(NSLocalizedString("Profile", comment: ""), for: .normal)
         titleButton.setTitleColor(UIColor.black, for: .normal)
         titleButton.backgroundColor = .white
         titleButton.translatesAutoresizingMaskIntoConstraints = false
@@ -131,9 +131,9 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     
     private func buttonPressed() {
         setStatusButton.target = { [self] in
-            print(statusTextField.text ?? "No text")
+            print(statusTextField.text ?? NSLocalizedString("No text", comment: ""))
             statusLabel.text = statusTextField.text
-            statusText = statusTextField.text ?? "No text"
+            statusText = statusTextField.text ?? NSLocalizedString("No text", comment: "")
             self.endEditing(true)
         }
     }

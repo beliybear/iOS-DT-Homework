@@ -1,0 +1,92 @@
+/* 
+  Localizable.strings
+  Navigation
+
+  Created by Beliy.Bear on 09.06.2023.
+  
+*/
+
+// LocationViewController
+"Hybrid" = "Гибрид";
+"Satellite" = "Спутник";
+"Standard" = "Стандарт";
+"Remove all annotations" = "Удалить все метки";
+
+// Factory
+"Profile" = "Профиль";
+"Feed" = "Новости";
+"Location" = "Локация";
+"Liked" = "Понравившиеся";
+
+// LoginViewController
+"  Email or Phone" = "  Почта или Телефон";
+"  Password" = "  Пароль";
+"Wrong login or password" = "Неверный логин или пароль";
+"Log In" = "Залогиниться";
+"Sign Up" = "Зарегистрироваться";
+"BruteForce" = "Подобрать пароль";
+"Unknown login or password" = "Неизвестный логин или пароль";
+"Please, enter correct user login and password" = "Пожалуйста, введите корректный логин и пароль";
+"Error" = "Ошибка";
+
+// SignUpViewController
+
+"Email" = "Почта";
+"Password" = "Пароль";
+"Confirm password" = "Подтвердить пароль";
+"Back" = "Назад";
+
+// FeedViewController
+
+"View Info" = "Информация";
+"View Post" = "Посмотреть пост";
+"Guess word" = "Угадай слово";
+"Feed" = "Новости";
+
+"TextField is empty" = "Поле пустое";
+
+// PostViewController
+
+"Anonymous" = "Аноним";
+
+// InfoViewController
+
+"Share" = "Поделиться";
+"Accepting" = "Подтверждение";
+"Share this post?" = "Поделиться этим постом?";
+"Yes" = "Да";
+"No" = "Нет";
+
+"Ok, post shared" = "Ок, пост переслан";
+"Ok, alert closed" = "Ок, алёрт закрыт";
+
+// PhotosTableViewCell
+
+"Photos" = "Фотографии";
+
+// ProfileViewController
+
+"Logout" = "Выйти";
+
+// PhotosViewController
+
+"Photo Gallery" = "Галерея";
+
+// ProfileHeaderView
+
+"Waiting for something..." = "Ожидание чего-то...";
+"Show status" = "Показать статус";
+"write something" = "Напишите что-то";
+"Profile" = "Профиль";
+"No text" = "Нет текста";
+
+// Errors
+
+"Seems like you forgot to write Email or Password" = "Похоже, вы оставили поле Email или Password пустым";
+"Wrong Email or Password" = "Неправильный логин или пароль";
+"The password consists of less than 6 characters" = "Пароль состоит менее чем из 6 символов";
+"Passwords entered do not match" = "Введенные пароли не совпадают";
+"Email is already in use" = "Email уже используется";
+"Incorrect Email" = "Неверно введен email";
+"Something went wrong" = "Что-то пошло не так";
+"Error Description: The specified item could not be found." = "Указанный элемент не найден.";

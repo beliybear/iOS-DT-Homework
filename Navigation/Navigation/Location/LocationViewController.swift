@@ -18,7 +18,7 @@ class LocationViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private lazy var hybridStyleButton: UIButton = {
         let hybridStyleButton = UIButton()
-        hybridStyleButton.setTitle("Hybrid", for: .normal)
+        hybridStyleButton.setTitle(NSLocalizedString("Hybrid", comment: ""), for: .normal)
         hybridStyleButton.backgroundColor = .white
         hybridStyleButton.layer.cornerRadius = 10
         hybridStyleButton.setTitleColor(.black, for: .normal)
@@ -28,7 +28,7 @@ class LocationViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private lazy var satelliteStyleButton: UIButton = {
         let satelliteStyleButton = UIButton()
-        satelliteStyleButton.setTitle("Satellite", for: .normal)
+        satelliteStyleButton.setTitle(NSLocalizedString("Satellite", comment: ""), for: .normal)
         satelliteStyleButton.backgroundColor = .white
         satelliteStyleButton.layer.cornerRadius = 10
         satelliteStyleButton.setTitleColor(.black, for: .normal)
@@ -38,7 +38,7 @@ class LocationViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private lazy var standardStyleButton: UIButton = {
         let standardStyleButton = UIButton()
-        standardStyleButton.setTitle("Standard", for: .normal)
+        standardStyleButton.setTitle(NSLocalizedString("Standard", comment: ""), for: .normal)
         standardStyleButton.backgroundColor = .white
         standardStyleButton.layer.cornerRadius = 10
         standardStyleButton.setTitleColor(.black, for: .normal)
@@ -48,7 +48,7 @@ class LocationViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private lazy var removeAnnotationsButton: UIButton = {
         let removeAnnotationsButton = UIButton()
-        removeAnnotationsButton.setTitle("Remove all annotations", for: .normal)
+        removeAnnotationsButton.setTitle(NSLocalizedString("Remove all annotations", comment: ""), for: .normal)
         removeAnnotationsButton.backgroundColor = .white
         removeAnnotationsButton.layer.cornerRadius = 10
         removeAnnotationsButton.setTitleColor(.black, for: .normal)

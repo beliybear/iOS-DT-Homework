@@ -62,7 +62,7 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Feed"
+        title = NSLocalizedString("Feed", comment: "")
         view.backgroundColor = .white
         setupConstraints()
         addTargets()
@@ -118,7 +118,7 @@ class FeedViewController: UIViewController {
                     }
                 } else {
                     label.backgroundColor = .systemGray
-                    print ("TextField is empty")
+                    print(NSLocalizedString("TextField is empty", comment: ""))
                 }
             }
         }

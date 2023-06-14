@@ -19,7 +19,7 @@ class CustomButton: UIButton {
         super.init(frame: frame)
     }
 
-    convenience  init (title: String?, cornerRadius: CGFloat?, titleColor: UIColor?, color: UIColor?) {
+    convenience  init (title: String, cornerRadius: CGFloat?, titleColor: UIColor?, color: UIColor?) {
         self.init(type: .custom)
         self.title = title
         self.cornerRadius = cornerRadius
@@ -34,7 +34,7 @@ class CustomButton: UIButton {
 
     func setup() {
         layer.cornerRadius = cornerRadius ?? 0
-        setTitle(title, for: .normal)
+        setTitle(NSLocalizedString(title!, comment: ""), for: .normal)
         setTitleColor(titleColor, for: .normal)
         backgroundColor = color
     }

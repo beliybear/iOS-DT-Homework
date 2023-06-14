@@ -61,7 +61,7 @@ class InfoViewController: UIViewController {
             let button = UIButton()
             button.backgroundColor = .systemGray
             button.layer.cornerRadius = 12
-            button.setTitle("Share", for: .normal)
+            button.setTitle(NSLocalizedString("Share", comment: ""), for: .normal)
             button.setTitleColor(.black, for: .normal)
             button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
             button.addTarget(self, action: #selector(showSimpleAlert), for: .touchUpInside)
@@ -106,16 +106,16 @@ class InfoViewController: UIViewController {
     }
     
     @objc func showSimpleAlert() {
-            let alert = UIAlertController(title: "Sharing",
-                                          message: "Share this post?",
+            let alert = UIAlertController(title: NSLocalizedString("Accepting", comment: ""),
+                                          message: NSLocalizedString("Share this post?", comment: ""),
                                           preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Yes",
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: ""),
                                       style: UIAlertAction.Style.cancel,
-                                      handler: { (action) in print("Ok, post shared")}))
+                                      handler: { (action) in print(NSLocalizedString("Ok, post shared", comment: ""))}))
         
             alert.addAction(UIAlertAction(title: "No",
                                   style: UIAlertAction.Style.default,
-                                  handler: { (action) in print("Ok, alert closed")}))
+                                  handler: { (action) in print(NSLocalizedString("Ok, alert closed", comment: ""))}))
         
             self.present(alert, animated: true, completion: nil)
         }
