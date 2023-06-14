@@ -26,7 +26,7 @@ class SignupViewController: UIViewController {
 
     private let loginTextField: UITextField = {
         let textField = UITextField()
-        textField.textColor = .black
+        textField.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.placeholder = NSLocalizedString("Email", comment: "")
         textField.autocapitalizationType = .none
@@ -36,7 +36,7 @@ class SignupViewController: UIViewController {
 
     private let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.textColor = .black
+        textField.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.placeholder = NSLocalizedString("Password", comment: "")
         textField.isSecureTextEntry = true
@@ -47,7 +47,7 @@ class SignupViewController: UIViewController {
 
     private let confirmPasswordTextField: UITextField = {
         let textField = UITextField()
-        textField.textColor = .black
+        textField.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.placeholder = NSLocalizedString("Confirm password", comment: "")
         textField.isSecureTextEntry = true
@@ -60,7 +60,7 @@ class SignupViewController: UIViewController {
         let button = UIButton()
         button.setTitle(NSLocalizedString("Sign Up", comment: ""), for: .normal)
         button.layer.cornerRadius = 10
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.createColor(lightMode: .white, darkMode: .black), for: .normal)
         button.backgroundColor = UIColor(patternImage: UIImage (named: "blue_pixel")!)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -72,7 +72,7 @@ class SignupViewController: UIViewController {
     }
 
     private func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
         view.addSubview(stackView)
         stackView.addArrangedSubview(loginTextField)
         stackView.addArrangedSubview(passwordTextField)

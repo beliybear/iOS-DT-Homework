@@ -30,6 +30,7 @@ class PhotosTableViewCell: UITableViewCell {
         collectionPhotosView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "DefaultCell")
         collectionPhotosView.delegate = self
         collectionPhotosView.dataSource = self
+        collectionPhotosView.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
         collectionPhotosView.translatesAutoresizingMaskIntoConstraints = false
         return collectionPhotosView
     }()
@@ -38,7 +39,7 @@ class PhotosTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
-        stackView.backgroundColor = .white
+        stackView.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
         return stackView
     }()
     
@@ -46,7 +47,7 @@ class PhotosTableViewCell: UITableViewCell {
         let label = UILabel()
         label.tag = 0
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        label.textColor = .black
+        label.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         label.text = NSLocalizedString("Photos", comment: "")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -56,13 +57,15 @@ class PhotosTableViewCell: UITableViewCell {
         let image = UIImageView()
         image.tag = 1
         image.image = UIImage(systemName: "arrow.right")
-        image.tintColor = .black
+        image.tintColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
+        isHighlighted = false
         addSubview(collectionPhotosView)
         addSubview(stackView)
         stackView.addArrangedSubview(label)

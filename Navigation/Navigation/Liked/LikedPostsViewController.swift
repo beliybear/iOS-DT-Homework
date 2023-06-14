@@ -10,7 +10,6 @@ import CoreData
 
 class LikedPostsViewController: UITableViewController {
     
-
     private var likedPosts: [LikedPost] = []
 
     override func viewDidLoad() {
@@ -48,7 +47,16 @@ class LikedPostsViewController: UITableViewController {
             views: Int(likedPost.views),
             postId: String(likedPost.postId!)
         )
- cell.setup(with: viewModel)
+        cell.setup(with: viewModel)
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let likedPost = likedPosts[indexPath.row]
+            CoreDataStack.shared.deleteLikedPost(likedPost: likedPost)
+            likedPosts.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 }

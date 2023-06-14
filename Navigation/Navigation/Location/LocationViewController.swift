@@ -19,9 +19,9 @@ class LocationViewController: UIViewController, UIGestureRecognizerDelegate {
     private lazy var hybridStyleButton: UIButton = {
         let hybridStyleButton = UIButton()
         hybridStyleButton.setTitle(NSLocalizedString("Hybrid", comment: ""), for: .normal)
-        hybridStyleButton.backgroundColor = .white
+        hybridStyleButton.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .systemGray3)
         hybridStyleButton.layer.cornerRadius = 10
-        hybridStyleButton.setTitleColor(.black, for: .normal)
+        hybridStyleButton.setTitleColor(UIColor.createColor(lightMode: .black, darkMode: .white), for: .normal)
         hybridStyleButton.addTarget(self, action: #selector(hybridStyleButtonPressed), for: .touchUpInside)
         return hybridStyleButton
     }()
@@ -29,9 +29,9 @@ class LocationViewController: UIViewController, UIGestureRecognizerDelegate {
     private lazy var satelliteStyleButton: UIButton = {
         let satelliteStyleButton = UIButton()
         satelliteStyleButton.setTitle(NSLocalizedString("Satellite", comment: ""), for: .normal)
-        satelliteStyleButton.backgroundColor = .white
+        satelliteStyleButton.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .systemGray3)
         satelliteStyleButton.layer.cornerRadius = 10
-        satelliteStyleButton.setTitleColor(.black, for: .normal)
+        satelliteStyleButton.setTitleColor(UIColor.createColor(lightMode: .black, darkMode: .white), for: .normal)
         satelliteStyleButton.addTarget(self, action: #selector(satelliteStyleButtonPressed), for: .touchUpInside)
         return satelliteStyleButton
     }()
@@ -39,9 +39,9 @@ class LocationViewController: UIViewController, UIGestureRecognizerDelegate {
     private lazy var standardStyleButton: UIButton = {
         let standardStyleButton = UIButton()
         standardStyleButton.setTitle(NSLocalizedString("Standard", comment: ""), for: .normal)
-        standardStyleButton.backgroundColor = .white
+        standardStyleButton.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .systemGray3)
         standardStyleButton.layer.cornerRadius = 10
-        standardStyleButton.setTitleColor(.black, for: .normal)
+        standardStyleButton.setTitleColor(UIColor.createColor(lightMode: .black, darkMode: .white), for: .normal)
         standardStyleButton.addTarget(self, action: #selector(standardStyleButtonPressed), for: .touchUpInside)
         return standardStyleButton
     }()
@@ -49,9 +49,9 @@ class LocationViewController: UIViewController, UIGestureRecognizerDelegate {
     private lazy var removeAnnotationsButton: UIButton = {
         let removeAnnotationsButton = UIButton()
         removeAnnotationsButton.setTitle(NSLocalizedString("Remove all annotations", comment: ""), for: .normal)
-        removeAnnotationsButton.backgroundColor = .white
+        removeAnnotationsButton.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .systemGray3)
         removeAnnotationsButton.layer.cornerRadius = 10
-        removeAnnotationsButton.setTitleColor(.black, for: .normal)
+        removeAnnotationsButton.setTitleColor(UIColor.createColor(lightMode: .black, darkMode: .white), for: .normal)
         removeAnnotationsButton.addTarget(self, action: #selector(removeAnnotationsButtonPressed), for: .touchUpInside)
         return removeAnnotationsButton
     }()

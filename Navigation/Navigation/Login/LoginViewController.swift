@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
     lazy var login: UITextField = {
         let login = UITextField()
         login.tag = 0
-        login.textColor = .black
+        login.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         login.backgroundColor = .systemGray6
         login.textAlignment = .left
         login.placeholder = NSLocalizedString("  Email or Phone", comment: "")
@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
     lazy var password: UITextField = {
         let password = UITextField()
         password.tag = 1
-        password.textColor = .black
+        password.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         password.backgroundColor = .systemGray6
         password.textAlignment = .left
         password.placeholder = NSLocalizedString("  Password", comment: "")
@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         button.setTitle(NSLocalizedString("Sign Up", comment: ""), for: .normal)
         button.layer.cornerRadius = 10
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.createColor(lightMode: .white, darkMode: .black), for: .normal)
         button.backgroundColor = UIColor(patternImage: UIImage (named: "blue_pixel")!)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(touchSignUpButton), for: .touchUpInside)
@@ -100,19 +100,11 @@ class LoginViewController: UIViewController {
         let loginButton = UIButton()
         loginButton.layer.cornerRadius = 10
         loginButton.setTitle(NSLocalizedString("Log In", comment: ""), for: .normal)
-        loginButton.setTitleColor(UIColor.white, for: .normal)
+        loginButton.setTitleColor(UIColor.createColor(lightMode: .white, darkMode: .black), for: .normal)
         loginButton.backgroundColor = UIColor(patternImage: UIImage (named: "blue_pixel")!)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.addTarget(self, action: #selector(touchLoginButton), for: .touchUpInside)
         return loginButton
-    }()
-    
-    private lazy var pickUpButton = CustomButton(title: "BruteForce", cornerRadius: 10, titleColor: .white, color: .black)
-    
-    private lazy var activityIndicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView()
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        return indicator
     }()
     
     private let alert = UIAlertController(title: NSLocalizedString("Wrong login or password", comment: ""), message: "",  preferredStyle: .alert)
@@ -121,32 +113,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
         setupGestures()
         addSubview()
         setupConstraints()
         setupAlert()
-        pickUpButton.addTarget(self, action: #selector(touchPickUpButton), for: .touchUpInside)
-    }
-    
-    @objc private func touchPickUpButton() {
-        
-        let queue = DispatchQueue.global(qos: .userInteractive)
-        let group = DispatchGroup()
-        
-        group.enter()
-        self.activityIndicator.startAnimating()
-        queue.async {
-            self.bruteForce(passwordToUnlock: self.randomPassword(length: 4))
-            group.leave()
-        }
-        group.notify(queue: .main){ [self] in
-            self.password.isSecureTextEntry = false
-            self.password.text = self.passwordForLogin
-            self.activityIndicator.stopAnimating()
-            
-        }
-        
     }
     
     
@@ -170,21 +141,18 @@ class LoginViewController: UIViewController {
     func addSubview() {
         stackView.addArrangedSubview(login)
         stackView.addArrangedSubview(password)
-        stackView.addArrangedSubview(activityIndicator)
         view.addSubview(scrollView)
         scrollView.addSubview(logoImage)
         scrollView.addSubview(stackView)
         scrollView.addSubview(logInButton)
         scrollView.addSubview(signUpButton)
-        scrollView.addSubview(pickUpButton)
     }
     
     func setupConstraints() {
-        pickUpButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
@@ -193,8 +161,8 @@ class LoginViewController: UIViewController {
             logoImage.heightAnchor.constraint(equalToConstant: 100),
             logoImage.widthAnchor.constraint(equalToConstant: 100),
             
-            stackView.heightAnchor.constraint(equalToConstant: 100),
             stackView.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 120),
+            stackView.heightAnchor.constraint(equalToConstant: 100),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
@@ -203,16 +171,10 @@ class LoginViewController: UIViewController {
             logInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             logInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-            signUpButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 3),
+            signUpButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 8),
             signUpButton.heightAnchor.constraint(equalToConstant: 50),
             signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
-            pickUpButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 16),
-            pickUpButton.heightAnchor.constraint(equalToConstant: 50),
-            pickUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            pickUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            pickUpButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
     }
     
@@ -264,72 +226,11 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension String {
-    var digits:      String { return "0123456789" }
-    var lowercase:   String { return "abcdefghijklmnopqrstuvwxyz" }
-    var uppercase:   String { return "ABCDEFGHIJKLMNOPQRSTUVWXYZ" }
-    var letters:     String { return lowercase + uppercase }
-    var printable:   String { return digits + letters }
-    
-    
-    
-    mutating func replace(at index: Int, with character: Character) {
-        var stringArray = Array(self)
-        stringArray[index] = character
-        self = String(stringArray)
-    }
-}
-
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         forcedHidingKeyboard()
         return true
-    }
-    
-    func bruteForce(passwordToUnlock: String) {
-        
-        let ALLOWED_CHARACTERS:   [String] = String().printable.map { String($0) }
-        
-        
-        
-        // Will strangely ends at 0000 instead of ~~~
-        while passwordForLogin != passwordToUnlock { // Increase MAXIMUM_PASSWORD_SIZE value for more
-            passwordForLogin = generateBruteForce(passwordForLogin, fromArray: ALLOWED_CHARACTERS)
-        }
-        print(passwordForLogin)
-    }
-    
-    func indexOf(character: Character, _ array: [String]) -> Int {
-        return array.firstIndex(of: String(character))!
-    }
-    
-    func characterAt(index: Int, _ array: [String]) -> Character {
-        return index < array.count ? Character(array[index])
-        : Character("")
-    }
-    
-    func generateBruteForce(_ string: String, fromArray array: [String]) -> String {
-        var str: String = string
-        
-        if str.count <= 0 {
-            str.append(characterAt(index: 0, array))
-        }
-        else {
-            str.replace(at: str.count - 1,
-                        with: characterAt(index: (indexOf(character: str.last!, array) + 1) % array.count, array))
-            
-            if indexOf(character: str.last!, array) == 0 {
-                str = String(generateBruteForce(String(str.dropLast()), fromArray: array)) + String(str.last!)
-            }
-        }
-        
-        return str
-    }
-    
-    func randomPassword(length: Int) -> String {
-        let letters = String().printable
-        return String((0..<length).map{ _ in letters.randomElement()! })
     }
     
     func goLogin() {
@@ -385,6 +286,4 @@ extension LoginViewController: UITextFieldDelegate {
             }
         })
     }
-    
-    
 }

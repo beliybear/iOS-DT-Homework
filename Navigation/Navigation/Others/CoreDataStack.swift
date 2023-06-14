@@ -24,6 +24,12 @@ class CoreDataStack {
         return container
     }()
     
+    func deleteLikedPost(likedPost: LikedPost) {
+        let context = persistentContainer.viewContext
+        context.delete(likedPost)
+        saveContext()
+    }
+    
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

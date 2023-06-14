@@ -17,7 +17,7 @@ class PhotosViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
         collectionView.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: "CustomCell")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "DefaultCell")
         collectionView.delegate = self
@@ -39,12 +39,12 @@ class PhotosViewController: UIViewController {
         setupButton()
         
         let start = CFAbsoluteTimeGetCurrent()
-        imageProcessor.processImagesOnThread(sourceImages: allImages, filter: .fade, qos: .background) { [weak self] completion in
+        imageProcessor.processImagesOnThread(sourceImages: allImages, filter: .fade, qos: .default) { [weak self] completion in
             guard let self = self else { return }
             self.allImagesProcessed = completion.compactMap { $0.flatMap { UIImage(cgImage: $0) } }
             
             let diff = CFAbsoluteTimeGetCurrent() - start
-            print("Took \(diff) seconds")
+//            print("Took \(diff) seconds")
             
             DispatchQueue.main.async {
                 self.allImages = self.allImagesProcessed
