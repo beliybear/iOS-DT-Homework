@@ -21,7 +21,7 @@ class PostTableViewCell: UITableViewCell {
     
     private lazy var authorText: UITextView = {
         let authorText = UITextView()
-        authorText.textColor = .black
+        authorText.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         authorText.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         authorText.textContainer.maximumNumberOfLines = 2
         authorText.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +33,7 @@ class PostTableViewCell: UITableViewCell {
     
     private lazy var descriptionText: UITextView = {
         let descriptionText = UITextView()
-        descriptionText.textColor = .lightGray
+        descriptionText.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         descriptionText.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         descriptionText.translatesAutoresizingMaskIntoConstraints = false
         descriptionText.isScrollEnabled = false
@@ -61,7 +61,7 @@ class PostTableViewCell: UITableViewCell {
     private lazy var likesLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = .black
+        label.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
         return label
@@ -78,7 +78,7 @@ class PostTableViewCell: UITableViewCell {
     private lazy var viewLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = .black
+        label.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
         return label
@@ -141,6 +141,8 @@ class PostTableViewCell: UITableViewCell {
     }
     
     private func setupView() {
+        backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
+        isHighlighted = false
         addSubview(authorText)
         addSubview(descriptionText)
         addSubview(postImage)

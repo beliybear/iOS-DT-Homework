@@ -35,11 +35,7 @@ class ProfileViewController: UIViewController {
         profileViewModel.setUser()
         profileViewModel.setPosts()
         setupTableView()
-        #if DEBUG
-        view.backgroundColor = .systemBlue
-        #else
-        view.backgroundColor = .white
-        #endif
+        view.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
 
         let signOutButton = UIBarButtonItem(title: NSLocalizedString("Logout", comment: ""), style: .plain, target: self, action: #selector(pushSignOutButton))
         navigationItem.leftBarButtonItem = signOutButton
@@ -56,6 +52,7 @@ class ProfileViewController: UIViewController {
         tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         tableView.dataSource = self
+        tableView.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
         tableView.delegate = self
     }
     
@@ -110,7 +107,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             headerView.avatarImageView.image = currentUser.avatar
             headerView.fullNameLabel.text = currentUser.name
             headerView.statusLabel.text = currentUser.status
-            headerView.contentView.backgroundColor = .white
+            headerView.contentView.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
             return headerView
         }
         return nil

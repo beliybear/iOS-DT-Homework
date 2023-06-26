@@ -18,7 +18,6 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 50
         imageView.layer.borderWidth = 3
-        imageView.layer.borderColor = UIColor.white.cgColor
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -26,7 +25,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     lazy var fullNameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        nameLabel.textColor = .black
+        nameLabel.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         return nameLabel
     }()
@@ -34,7 +33,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     lazy var statusLabel: UILabel = {
         let status = UILabel()
         status.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        status.textColor = .gray
+        status.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         status.text = NSLocalizedString("Waiting for something...", comment: "")
         status.translatesAutoresizingMaskIntoConstraints = false
         return status
@@ -42,18 +41,18 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     
     private lazy var setStatusButton = CustomButton(title: "Show status",
                                                      cornerRadius: 4,
-                                                     titleColor: .white,
+                                                     titleColor: UIColor.createColor(lightMode: .white, darkMode: .black),
                                                      color: .systemBlue)
     
     private lazy var statusTextField: UITextField = {
         let text = UITextField()
-        text.backgroundColor = .white
+        text.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
         text.textAlignment = .center
         text.layer.borderWidth = 1
-        text.layer.borderColor = UIColor.black.cgColor
+        text.layer.borderColor = UIColor.createColor(lightMode: .systemGray2, darkMode: .white).cgColor
         text.layer.cornerRadius = 12
         text.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        text.textColor = .black
+        text.textColor = UIColor.createColor(lightMode: .black, darkMode: .white)
         text.placeholder = NSLocalizedString("write something", comment: "")
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
@@ -62,8 +61,8 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     private lazy var changeTitle: UIButton = {
         let titleButton = UIButton()
         titleButton.setTitle(NSLocalizedString("Profile", comment: ""), for: .normal)
-        titleButton.setTitleColor(UIColor.black, for: .normal)
-        titleButton.backgroundColor = .white
+        titleButton.setTitleColor(UIColor.createColor(lightMode: .black, darkMode: .white), for: .normal)
+        titleButton.backgroundColor = UIColor.createColor(lightMode: .white, darkMode: .black)
         titleButton.translatesAutoresizingMaskIntoConstraints = false
         return titleButton
     }()
@@ -72,12 +71,16 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         addSubview()
         setupConstraints()
-        buttonPressed()
+        addTarget()
         setUser(avatar: UIImage(named: "avatarImage")!, name: "BeliyBear", status: "")
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    func addTarget(){
+        setStatusButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     }
     
     func addSubview() {
@@ -129,7 +132,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         })
     }
     
-    private func buttonPressed() {
+    @objc private func buttonPressed() {
         setStatusButton.target = { [self] in
             print(statusTextField.text ?? NSLocalizedString("No text", comment: ""))
             statusLabel.text = statusTextField.text
