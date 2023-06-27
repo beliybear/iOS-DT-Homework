@@ -34,6 +34,17 @@ class LoginViewController: UIViewController {
         return logoImage
     }()
     
+    private lazy var biometricAuthButton: UIButton = {
+        let bioAuthButton = UIButton()
+        bioAuthButton.setTitle(NSLocalizedString("Authorize with Biometrics", comment: ""), for: .normal)
+        bioAuthButton.setTitleColor(UIColor.createColor(lightMode: .white, darkMode: .black), for: .normal)
+        bioAuthButton.backgroundColor = UIColor(patternImage: UIImage(named: "blue_pixel")!)
+        bioAuthButton.addTarget(self, action: #selector(authWithBiometrics), for: .touchUpInside)
+        bioAuthButton.layer.cornerRadius = 10
+        bioAuthButton.translatesAutoresizingMaskIntoConstraints = false
+        return bioAuthButton
+    }()
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -146,6 +157,7 @@ class LoginViewController: UIViewController {
         scrollView.addSubview(stackView)
         scrollView.addSubview(logInButton)
         scrollView.addSubview(signUpButton)
+        scrollView.addSubview(biometricAuthButton)
     }
     
     func setupConstraints() {
@@ -174,7 +186,12 @@ class LoginViewController: UIViewController {
             signUpButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 8),
             signUpButton.heightAnchor.constraint(equalToConstant: 50),
             signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
+            biometricAuthButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 16),
+            biometricAuthButton.heightAnchor.constraint(equalToConstant: 50),
+            biometricAuthButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            biometricAuthButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
     }
     
@@ -183,6 +200,31 @@ class LoginViewController: UIViewController {
             _ in
             print("OK")
         }))
+    }
+    
+    @objc func authWithBiometrics() {
+       let localAuth = LocalAuthorizationService()
+       localAuth.authorizeIfPossible { (authorized) in
+           if authorized {
+               self.coordinator.startView(user: User(login: "beliybear@mail.ru", name: "BeliyBear", avatar: UIImage(named: "avatarImage")!, status: "Something..."))
+           } else {
+               let alert = UIAlertController(title: NSLocalizedString("Biometrics authorization failed", comment: ""), message: NSLocalizedString("Please, turn on Face ID to authorize with biometrics", comment: ""), preferredStyle: .alert)
+               let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (_) -> Void in
+                   guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                       return
+                   }
+
+                   if UIApplication.shared.canOpenURL(settingsUrl) {
+                       UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                          // print("Settings opened: \(success)")
+                       })
+                   }
+               }
+               alert.addAction(UIAlertAction(title: "OK", style: .default))
+               alert.addAction(settingsAction)
+               self.present(alert, animated: true)
+           }
+       }
     }
     
     @objc private func didShowKeyboard(_ notification: Notification) {

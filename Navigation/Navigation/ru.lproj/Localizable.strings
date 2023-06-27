@@ -28,6 +28,10 @@
 "Unknown login or password" = "Неизвестный логин или пароль";
 "Please, enter correct user login and password" = "Пожалуйста, введите корректный логин и пароль";
 "Error" = "Ошибка";
+"Authorize with Biometrics" = "Авторизация по биометрии";
+"Please, turn on Face ID to authorize with biometrics" = "Пожалуйста, включите Face ID для авторизации по биометрии";
+"Biometrics authorization failed" = "Ошибка биометрической авторизации";
+"Settings" = "Настройки";
 
 // SignUpViewController
 
