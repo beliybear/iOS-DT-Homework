@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30C6B5E77E4D21D6C1E743D9 /* Pods_ServiceStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FEFE0D888C53FEB17B1203 /* Pods_ServiceStorage.framework */; };
+		3A0C7C272A49C363005BC78A /* LocalNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C7C262A49C363005BC78A /* LocalNotificationsService.swift */; };
 		3A114129294C506500CD28C6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A114128294C506500CD28C6 /* InfoViewController.swift */; };
 		3A3FDC522A3218B80030967D /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FDC512A3218B80030967D /* LocationViewController.swift */; };
 		3A3FDC542A321F940030967D /* CapitalAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FDC532A321F940030967D /* CapitalAnnotation.swift */; };
@@ -31,6 +31,12 @@
 		3AB2E8A029BD03560001665C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2E89F29BD03560001665C /* User.swift */; };
 		3AB6E24C2951B6AD00B07728 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E24A2951B6AD00B07728 /* ProfileHeaderView.swift */; };
 		3AB6E24D2951B6AD00B07728 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E24B2951B6AD00B07728 /* ProfileViewController.swift */; };
+		3ABE8E9D2A43D1A5002BD3C3 /* Pods_ServiceStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FEFE0D888C53FEB17B1203 /* Pods_ServiceStorage.framework */; };
+		3ABE8E9E2A43D1A5002BD3C3 /* Pods_ServiceStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11FEFE0D888C53FEB17B1203 /* Pods_ServiceStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3ABE8EA02A43D1AB002BD3C3 /* Pods_Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248CF500B1432010DF22671E /* Pods_Navigation.framework */; };
+		3ABE8EA12A43D1AB002BD3C3 /* Pods_Navigation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 248CF500B1432010DF22671E /* Pods_Navigation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3ABE8EA22A43D200002BD3C3 /* ServiceStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC39A4C2A1A86910053AF30 /* ServiceStorage.framework */; };
+		3ABE8EA32A43D200002BD3C3 /* ServiceStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC39A4C2A1A86910053AF30 /* ServiceStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3AC1C3AD29BE33FE003E3CD7 /* ServiceStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AC1C3AC29BE33FE003E3CD7 /* ServiceStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AC1C41729BE3633003E3CD7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1C41629BE3633003E3CD7 /* Post.swift */; };
 		3AC39A462A1A86000053AF30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC39A452A1A86000053AF30 /* GoogleService-Info.plist */; };
@@ -48,10 +54,16 @@
 		3AE9E70929BD1DC800D13B93 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9E70829BD1DC800D13B93 /* ProfileViewModel.swift */; };
 		3AEC49072A1D2D94003B454E /* LikedPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC49062A1D2D94003B454E /* LikedPostsViewController.swift */; };
 		3AEC490C2A1D300E003B454E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC490B2A1D300E003B454E /* CoreDataStack.swift */; };
-		68250B582D607D34105122F0 /* Pods_Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248CF500B1432010DF22671E /* Pods_Navigation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3ABE8EA42A43D200002BD3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A990C14294B157D001D0ECC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AC1C3A929BE33FD003E3CD7;
+			remoteInfo = ServiceStorage;
+		};
 		3AC1C3AE29BE33FE003E3CD7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A990C14294B157D001D0ECC /* Project object */;
@@ -139,12 +151,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		3ABE8E9F2A43D1A5002BD3C3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3ABE8E9E2A43D1A5002BD3C3 /* Pods_ServiceStorage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3AE9E6E529BD071400D13B93 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3ABE8EA32A43D200002BD3C3 /* ServiceStorage.framework in Embed Frameworks */,
+				3ABE8EA12A43D1AB002BD3C3 /* Pods_Navigation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +179,7 @@
 /* Begin PBXFileReference section */
 		11FEFE0D888C53FEB17B1203 /* Pods_ServiceStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		248CF500B1432010DF22671E /* Pods_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A0C7C262A49C363005BC78A /* LocalNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsService.swift; sourceTree = "<group>"; };
 		3A114128294C506500CD28C6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		3A3FDC512A3218B80030967D /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		3A3FDC532A321F940030967D /* CapitalAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapitalAnnotation.swift; sourceTree = "<group>"; };
@@ -285,8 +311,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ABE8EA22A43D200002BD3C3 /* ServiceStorage.framework in Frameworks */,
+				3ABE8EA02A43D1AB002BD3C3 /* Pods_Navigation.framework in Frameworks */,
 				3AE9E6F429BD0E3E00D13B93 /* iOSIntPackage in Frameworks */,
-				68250B582D607D34105122F0 /* Pods_Navigation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +321,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30C6B5E77E4D21D6C1E743D9 /* Pods_ServiceStorage.framework in Frameworks */,
+				3ABE8E9D2A43D1A5002BD3C3 /* Pods_ServiceStorage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +366,7 @@
 				3A96290B29BCFE11008916E2 /* UIColorExtension.swift */,
 				3AC39A6D2A1A8D5D0053AF30 /* Errors.swift */,
 				3AEC490B2A1D300E003B454E /* CoreDataStack.swift */,
+				3A0C7C262A49C363005BC78A /* LocalNotificationsService.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -704,6 +732,7 @@
 			);
 			dependencies = (
 				3AC1C3AF29BE33FE003E3CD7 /* PBXTargetDependency */,
+				3ABE8EA52A43D200002BD3C3 /* PBXTargetDependency */,
 			);
 			name = Navigation;
 			packageProductDependencies = (
@@ -722,6 +751,7 @@
 				3AC1C3A629BE33FD003E3CD7 /* Sources */,
 				3AC1C3A729BE33FD003E3CD7 /* Frameworks */,
 				3AC1C3A829BE33FD003E3CD7 /* Resources */,
+				3ABE8E9F2A43D1A5002BD3C3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -740,7 +770,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					3A990C1B294B157D001D0ECC = {
 						CreatedOnToolsVersion = 14.1;
@@ -965,6 +995,7 @@
 				3A990C36294B15B8001D0ECC /* PostViewController.swift in Sources */,
 				3AE9E6F729BD19C000D13B93 /* Factory.swift in Sources */,
 				3A96290C29BCFE11008916E2 /* UIColorExtension.swift in Sources */,
+				3A0C7C272A49C363005BC78A /* LocalNotificationsService.swift in Sources */,
 				3A990C20294B157D001D0ECC /* AppDelegate.swift in Sources */,
 				3AE9E6EF29BD09AB00D13B93 /* FeedModel.swift in Sources */,
 				3AE9E70929BD1DC800D13B93 /* ProfileViewModel.swift in Sources */,
@@ -1008,6 +1039,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3ABE8EA52A43D200002BD3C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AC1C3A929BE33FD003E3CD7 /* ServiceStorage */;
+			targetProxy = 3ABE8EA42A43D200002BD3C3 /* PBXContainerItemProxy */;
+		};
 		3AC1C3AF29BE33FE003E3CD7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3AC1C3A929BE33FD003E3CD7 /* ServiceStorage */;
@@ -1156,7 +1192,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 495E14A58A94C6DADB389801 /* Pods-Navigation.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Navigation/Navigation.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1172,6 +1207,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "А";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1197,7 +1233,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4BBA4DC12C9773C96F3EC1B2 /* Pods-Navigation.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Navigation/Navigation.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1213,6 +1248,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "А";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
