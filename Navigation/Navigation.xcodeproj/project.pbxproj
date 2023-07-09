@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A0C7C272A49C363005BC78A /* LocalNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C7C262A49C363005BC78A /* LocalNotificationsService.swift */; };
 		3A114129294C506500CD28C6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A114128294C506500CD28C6 /* InfoViewController.swift */; };
+		3A3C161F2A4B7CDE002C5FF0 /* LocalAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C161E2A4B7CDE002C5FF0 /* LocalAuthorizationService.swift */; };
 		3A3FDC522A3218B80030967D /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FDC512A3218B80030967D /* LocationViewController.swift */; };
 		3A3FDC542A321F940030967D /* CapitalAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FDC532A321F940030967D /* CapitalAnnotation.swift */; };
 		3A41637A29624CAF001AEB66 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41637929624CAF001AEB66 /* PostTableViewCell.swift */; };
@@ -181,6 +182,7 @@
 		248CF500B1432010DF22671E /* Pods_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A0C7C262A49C363005BC78A /* LocalNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsService.swift; sourceTree = "<group>"; };
 		3A114128294C506500CD28C6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		3A3C161E2A4B7CDE002C5FF0 /* LocalAuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthorizationService.swift; sourceTree = "<group>"; };
 		3A3FDC512A3218B80030967D /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		3A3FDC532A321F940030967D /* CapitalAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapitalAnnotation.swift; sourceTree = "<group>"; };
 		3A41637929624CAF001AEB66 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				3AC39A6D2A1A8D5D0053AF30 /* Errors.swift */,
 				3AEC490B2A1D300E003B454E /* CoreDataStack.swift */,
 				3A0C7C262A49C363005BC78A /* LocalNotificationsService.swift */,
+				3A3C161E2A4B7CDE002C5FF0 /* LocalAuthorizationService.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -1018,6 +1021,7 @@
 				3AE9E6FC29BD1A6A00D13B93 /* PhotoCoordinator.swift in Sources */,
 				3A83255629667F5400EDD1D9 /* ProfileCollectionViewCell.swift in Sources */,
 				3AE9E6FE29BD1A7E00D13B93 /* TabBarController.swift in Sources */,
+				3A3C161F2A4B7CDE002C5FF0 /* LocalAuthorizationService.swift in Sources */,
 				3A990C34294B15B1001D0ECC /* FeedViewController.swift in Sources */,
 				3A83255429667DC200EDD1D9 /* PhotosViewController.swift in Sources */,
 				3A83255829667FD000EDD1D9 /* PhotosNames.swift in Sources */,
@@ -1192,7 +1196,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 495E14A58A94C6DADB389801 /* Pods-Navigation.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Navigation/Navigation.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -1201,6 +1207,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Navigation/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Navigation;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
@@ -1233,7 +1240,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4BBA4DC12C9773C96F3EC1B2 /* Pods-Navigation.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Navigation/Navigation.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -1242,6 +1251,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Navigation/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Navigation;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
