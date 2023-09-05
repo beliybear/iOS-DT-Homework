@@ -1,0 +1,4 @@
+NSLocationAlwaysAndWhenInUseUsageDescription = "Требуется для определения местоположения";
+NSLocationAlwaysUsageDescription = "Требуется для определения местоположения";
+NSLocationWhenInUseUsageDescription = "Требуется для определения местоположения";
+

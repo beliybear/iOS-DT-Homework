@@ -1,0 +1,3 @@
+NSLocationAlwaysAndWhenInUseUsageDescription = "Required for location";
+NSLocationAlwaysUsageDescription = "Required for location";
+NSLocationWhenInUseUsageDescription = "Required for location";

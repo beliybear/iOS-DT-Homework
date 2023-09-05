@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>767099178236-cdpufl35kn04n7t9093fe2ujujgvidjj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.767099178236-cdpufl35kn04n7t9093fe2ujujgvidjj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCupaYLKnOZ0W6GZORGocrsuUFcTd4tz8E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>767099178236</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ru.beliybear.Navigation</string>
+	<key>PROJECT_ID</key>
+	<string>navigation-583df</string>
+	<key>STORAGE_BUCKET</key>
+	<string>navigation-583df.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:767099178236:ios:66dcfc34c6110b63de9b79</string>
+</dict>
+</plist>
